@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Technical Blog | Mehmet Akif ÇAKIR</title>
+    <meta name="description" content="Technical blog posts on robotics, mechatronics, electronics, programming, and engineering projects." />
+    <meta property="og:title" content="Technical Blog | Mehmet Akif ÇAKIR" />
+    <meta property="og:description" content="Searchable and filterable engineering blog with editable data-driven posts." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://YOUR-DOMAIN.com/blog/index.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://YOUR-DOMAIN.com/blog/index.html" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="/index.html#home">MAÇ</a>
+        <div class="nav-actions"><a class="btn btn-ghost" href="/index.html#blog">Portfolio</a></div>
+      </div>
+    </header>
+
+    <main class="section container page-enter">
+      <h1>Technical Blog</h1>
+      <p class="section-intro">Use <code>/data/site-data.js</code> to add or edit articles. Placeholder posts are clearly marked.</p>
+      <div class="blog-toolbar">
+        <input id="blog-search" class="search-input" type="search" placeholder="Search title, summary, tags..." aria-label="Search blog posts" />
+        <a class="btn btn-ghost" href="/index.html#contact">Contact</a>
+      </div>
+      <div class="filters" id="blog-category-filters" aria-label="Blog category filters"></div>
+      <div class="filters" id="blog-tags-root" aria-label="Blog tags filters"></div>
+      <section class="blog-grid" id="blog-list-root" aria-live="polite"></section>
+    </main>
+
+    <footer>
+      <div class="container footer-row">
+        <div>© 2026 Mehmet Akif ÇAKIR</div>
+        <div><a href="/">Back to Home</a></div>
+      </div>
+    </footer>
+
+    <script src="/data/site-data.js"></script>
+    <script src="/js/blog.js"></script>
+  </body>
+</html>

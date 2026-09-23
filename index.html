@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mehmet Akif ÇAKIR | Mechatronics Engineering Student</title>
+    <meta name="description" content="Dark-first personal portfolio and technical blog for Mehmet Akif ÇAKIR, focused on mechatronics, robotics, embedded systems, and engineering projects." />
+    <meta property="og:title" content="Mehmet Akif ÇAKIR | Mechatronics Engineering Student" />
+    <meta property="og:description" content="Portfolio, project showcase, technical blog, and CV hub with robotics and embedded systems focus." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://YOUR-DOMAIN.com" />
+    <meta property="og:image" content="https://YOUR-DOMAIN.com/public/images/profile/og-preview.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mehmet Akif ÇAKIR | Mechatronics Engineering Student" />
+    <meta name="twitter:description" content="Engineering portfolio and technical blog focused on robotics and embedded systems." />
+    <meta name="twitter:image" content="https://YOUR-DOMAIN.com/public/images/profile/og-preview.svg" />
+    <link rel="canonical" href="https://YOUR-DOMAIN.com" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header" aria-label="Main navigation">
+      <div class="container nav-wrap">
+        <a class="brand" href="#home">MAÇ</a>
+        <nav>
+          <button id="menu-toggle" class="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">☰</button>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#cv">CV</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="nav-actions"><button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">◐</button></div>
+      </div>
+    </header>
+
+    <main id="main-content" class="page-enter">
+      <section id="home" class="hero section">
+        <div class="motion-bg" aria-hidden="true"></div>
+        <div class="container hero-grid">
+          <div>
+            <p class="pill" id="hero-status"><span class="dot" aria-hidden="true"></span>Currently learning & building</p>
+            <h1 id="hero-name">Mehmet Akif ÇAKIR</h1>
+            <p id="hero-role" class="subtitle">Mechatronics Engineering Student</p>
+            <p id="hero-tagline">Exploring robotics, embedded systems, software and intelligent engineering solutions.</p>
+            <div class="button-row">
+              <a class="btn btn-primary" href="#projects">View My Projects</a>
+              <a class="btn btn-ghost cv-link" href="/public/cv.pdf" download>Download CV</a>
+            </div>
+            <div class="social-row">
+              <a class="github-link" href="https://github.com/YOUR-USERNAME" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
+          </div>
+          <aside class="hero-card reveal" aria-label="Engineering focus">
+            <h2>Engineering Focus</h2>
+            <ul>
+              <li>Mechatronics + Robotics systems thinking</li>
+              <li>Embedded control and sensor integration</li>
+              <li>Practical project-based learning approach</li>
+              <li>Continuous improvement through experimentation</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container about-grid">
+          <article>
+            <h2>About</h2>
+            <p class="section-intro">I am Mehmet Akif ÇAKIR, a Mechatronics Engineering student at Manisa Celal Bayar University. I focus on combining software, electronics, and engineering design into practical systems. My learning style is project-driven: I build, test, document, and improve.</p>
+            <p class="section-intro">My interests include robotics, embedded systems, programming, automation, technical drawing, and intelligent engineering solutions. This site is both my portfolio and my technical notebook.</p>
+          </article>
+          <article class="card reveal" aria-label="Engineering timeline">
+            <h3>Engineering Timeline</h3>
+            <ul class="timeline">
+              <li><strong>University Journey</strong><br/>Mechatronics Engineering at Manisa Celal Bayar University</li>
+              <li><strong>Hands-on Prototyping</strong><br/>Robotics, sensor integrations, and embedded software studies</li>
+              <li><strong>Next Milestones</strong><br/>[Editable Placeholder] Add internship goals, competitions, and project milestones</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="section">
+        <div class="container">
+          <h2>Skills</h2>
+          <p class="section-intro">Skill levels are intentionally neutral and editable: Learning, Familiar, Intermediate.</p>
+          <div class="skills-grid" id="skills-root"></div>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="container">
+          <h2>Projects</h2>
+          <p class="section-intro">Data-driven project cards. Replace placeholders as new work is completed.</p>
+          <div class="filters" id="project-filters" aria-label="Project categories"></div>
+          <div class="projects-grid" id="projects-root"></div>
+          <div class="featured">
+            <article class="card reveal" id="featured-body"></article>
+            <aside class="schematic reveal" aria-label="Autonomous robot concept note">
+              <h3>Featured Robotics Focus</h3>
+              <p><strong>Autonomous Egg Collection Robot</strong> concept combines sensor-based navigation, object/egg detection logic, servo-assisted collection behavior, DC motor control, and EEPROM-backed embedded settings.</p>
+              <p>No rankings, awards, or metrics are claimed here. Add your verified outcomes later if needed.</p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section id="blog" class="section">
+        <div class="container">
+          <h2>Technical Blog</h2>
+          <p class="section-intro">Placeholder posts are realistic and editable. Use them as structured templates for future articles.</p>
+          <div class="blog-grid" id="blog-preview-root"></div>
+          <div class="button-row"><a class="btn btn-primary" href="/blog/index.html">Open Blog</a></div>
+        </div>
+      </section>
+
+      <section id="cv" class="section">
+        <div class="container cv-grid">
+          <article>
+            <h2>CV</h2>
+            <p class="section-intro">Prepared for <code>/public/cv.pdf</code> and easy future updates.</p>
+            <div class="button-row"><a class="btn btn-primary cv-link" href="/public/cv.pdf" download>Download CV</a></div>
+          </article>
+          <article class="card reveal">
+            <h3>Education Timeline</h3>
+            <ul class="timeline">
+              <li><strong>Manisa Celal Bayar University</strong><br/>Mechatronics Engineering<br/>Start Date: [Editable Placeholder]<br/>Expected Graduation: [Editable Placeholder]<br/>Relevant Coursework: [Editable Placeholder]</li>
+            </ul>
+            <h3>Technical Skills</h3>
+            <p class="meta">[Editable Placeholder] Add core stacks and tools.</p>
+            <h3>Projects • Competitions • Certifications • Languages</h3>
+            <p class="meta">[Editable Placeholder] Add TEKNOFEST / TÜBİTAK / certifications and language details when ready.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container contact-grid">
+          <article>
+            <h2>Contact</h2>
+            <p>Email: <a class="email-link" href="mailto:your-email@example.com">your-email@example.com</a></p>
+            <p><a class="github-link" href="https://github.com/YOUR-USERNAME" target="_blank" rel="noreferrer">GitHub</a> · <a class="linkedin-link" href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" rel="noreferrer">LinkedIn</a></p>
+          </article>
+          <form class="card reveal" aria-label="Contact form placeholder" method="post" action="#" data-form-provider="formspree-or-netlify">
+            <h3>Message Form (UI Ready)</h3>
+            <p class="meta">This form is intentionally frontend-only. Connect Formspree/Netlify Forms later.</p>
+            <label>Name<br/><input class="search-input" type="text" name="name" autocomplete="name" /></label><br/>
+            <label>Email<br/><input class="search-input" type="email" name="email" autocomplete="email" /></label><br/>
+            <label>Message<br/><textarea class="search-input" name="message" rows="5"></textarea></label><br/>
+            <button type="submit" class="btn btn-primary">Send (integration required)</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-row">
+        <div><strong>Mehmet Akif ÇAKIR</strong> · Mechatronics Engineering Student</div>
+        <div><a class="github-link" href="https://github.com/YOUR-USERNAME" target="_blank" rel="noreferrer">GitHub</a> · <a class="linkedin-link" href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" rel="noreferrer">LinkedIn</a></div>
+        <div>© <span id="year">2026</span> · Built with semantic HTML, CSS, and vanilla JavaScript</div>
+      </div>
+    </footer>
+
+    <script src="/data/site-data.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
