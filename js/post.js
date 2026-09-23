@@ -8,7 +8,7 @@
   const relatedRoot = document.getElementById('related-posts');
 
   if (!post) {
-    articleRoot.innerHTML = '<h1>Post not found</h1><p class="meta">Return to <a href="/blog/index.html">blog list</a>.</p>';
+    articleRoot.innerHTML = '<h1>Post not found</h1><p class="meta">Return to <a href="index.html">blog list</a>.</p>';
     return;
   }
 
@@ -34,7 +34,7 @@
       <div class="card-body">
         <div class="meta">${item.category}</div>
         <h3>${item.title}</h3>
-        <a class="btn btn-ghost" href="/blog/post.html?slug=${item.slug}">Read</a>
+        <a class="btn btn-ghost" href="post.html?slug=${item.slug}">Read</a>
       </div>`;
     relatedRoot.appendChild(card);
   });

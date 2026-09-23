@@ -20,7 +20,7 @@
       return inCategory && inTag && inQuery;
     });
 
-    listRoot.innerHTML = filtered.length ? '' : '<p class="meta">No posts found. Update filters or add new posts in <code>/data/site-data.js</code>.</p>';
+    listRoot.innerHTML = filtered.length ? '' : '<p class="meta">No posts found. Update filters or add new posts in <code>data/site-data.js</code>.</p>';
     filtered.forEach(post => {
       const article = document.createElement('article');
       article.className = 'blog-card page-enter';
@@ -31,7 +31,7 @@
           <h3>${post.title}</h3>
           <p>${post.summary}</p>
           <div class="tags">${post.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-          <div class="links-row"><a class="btn btn-primary" href="/blog/post.html?slug=${post.slug}">Read Article</a></div>
+          <div class="links-row"><a class="btn btn-primary" href="post.html?slug=${post.slug}">Read Article</a></div>
         </div>`;
       listRoot.appendChild(article);
     });

@@ -115,7 +115,7 @@
         <div class="meta">${post.category} · ${mins} min read</div>
         <h3>${post.title}</h3>
         <p>${post.summary}</p>
-        <a class="btn btn-ghost" href="/blog/post.html?slug=${post.slug}">Read Article</a>
+        <a class="btn btn-ghost" href="blog/post.html?slug=${post.slug}">Read Article</a>
       </div>`;
     blogPreview.appendChild(card);
   });

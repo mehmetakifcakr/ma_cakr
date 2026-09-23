@@ -13,7 +13,7 @@ window.SITE_DATA = {
   contact: {
     email: 'your-email@example.com'
   },
-  cvPath: '/public/cv.pdf'
+  cvPath: 'public/cv.pdf'
 };
 
 window.SKILLS_DATA = [
@@ -55,7 +55,7 @@ window.PROJECTS_DATA = [
     description: 'Sensor-based robotics concept using Arduino Nano for navigation and egg/object detection. Uses servo-controlled handling logic and embedded decision flow.',
     technologies: ['Arduino Nano', 'Servo Motor', 'Sensors', 'DC Motors', 'EEPROM', 'Embedded C/C++'],
     category: 'Robotics',
-    image: '/public/images/projects/egg-robot.svg',
+    image: 'public/images/projects/egg-robot.svg',
     github: 'https://github.com/YOUR-USERNAME/YOUR-REPOSITORY',
     demo: '#',
     placeholder: false,
@@ -67,7 +67,7 @@ window.PROJECTS_DATA = [
     description: 'Editable placeholder: Add your actual line follower implementation details and repository link.',
     technologies: ['Arduino', 'IR Sensors', 'Embedded C/C++'],
     category: 'Electronics',
-    image: '/public/images/projects/line-follower.svg',
+    image: 'public/images/projects/line-follower.svg',
     github: 'https://github.com/YOUR-USERNAME',
     demo: '#',
     placeholder: true
@@ -78,7 +78,7 @@ window.PROJECTS_DATA = [
     description: 'Editable placeholder: Document a project where you visualize sensor/process data for engineering decisions.',
     technologies: ['JavaScript', 'Data Visualization', 'GitHub Pages'],
     category: 'Software',
-    image: '/public/images/projects/dashboard.svg',
+    image: 'public/images/projects/dashboard.svg',
     github: 'https://github.com/YOUR-USERNAME',
     demo: '#',
     placeholder: true
@@ -89,7 +89,7 @@ window.PROJECTS_DATA = [
     description: 'Editable placeholder: Add your technical drawing and 3D design studies.',
     technologies: ['CAD', 'Technical Drawing', 'Design Review'],
     category: 'Engineering',
-    image: '/public/images/projects/cad-study.svg',
+    image: 'public/images/projects/cad-study.svg',
     github: 'https://github.com/YOUR-USERNAME',
     demo: '#',
     placeholder: true
@@ -100,7 +100,7 @@ window.PROJECTS_DATA = [
     description: 'Editable placeholder: Add details for an AI-assisted embedded systems prototype when available.',
     technologies: ['Python', 'Embedded Systems', 'AI'],
     category: 'AI',
-    image: '/public/images/projects/embedded-ai.svg',
+    image: 'public/images/projects/embedded-ai.svg',
     github: 'https://github.com/YOUR-USERNAME',
     demo: '#',
     placeholder: true
@@ -114,7 +114,7 @@ window.BLOG_POSTS = [
     date: '2026-01-15',
     category: 'Robotics',
     tags: ['Robotics', 'Learning Path', 'Projects'],
-    coverImage: '/public/images/blog/robotics-start.svg',
+    coverImage: 'public/images/blog/robotics-start.svg',
     summary: 'A practical roadmap for beginning robotics with small, repeatable experiments.',
     content: [
       'This placeholder article explains how to start robotics using small milestones, consistent iteration, and project documentation.',
@@ -128,7 +128,7 @@ window.BLOG_POSTS = [
     date: '2026-02-06',
     category: 'Electronics',
     tags: ['Arduino', 'Sensors', 'Embedded'],
-    coverImage: '/public/images/blog/arduino-sensors.svg',
+    coverImage: 'public/images/blog/arduino-sensors.svg',
     summary: 'Understanding sensor basics and turning them into reliable project behavior.',
     content: [
       'This placeholder article introduces calibration, filtering noise, and validating sensor readings in simple prototypes.',
@@ -142,7 +142,7 @@ window.BLOG_POSTS = [
     date: '2026-03-12',
     category: 'Projects',
     tags: ['Robotics', 'Control', 'Arduino'],
-    coverImage: '/public/images/blog/line-follower-blog.svg',
+    coverImage: 'public/images/blog/line-follower-blog.svg',
     summary: 'Common design mistakes, tuning strategy, and iteration methods for line follower robots.',
     content: [
       'This placeholder article covers balancing mechanics, sensors, and control logic during practical testing.',
@@ -156,7 +156,7 @@ window.BLOG_POSTS = [
     date: '2026-04-04',
     category: 'Mechatronics',
     tags: ['Embedded', 'Microcontrollers', 'Engineering'],
-    coverImage: '/public/images/blog/embedded-intro.svg',
+    coverImage: 'public/images/blog/embedded-intro.svg',
     summary: 'A student-friendly guide to thinking in constraints and deterministic behavior.',
     content: [
       'This placeholder article explains real-time considerations, memory limits, and hardware/software interaction.',
@@ -170,7 +170,7 @@ window.BLOG_POSTS = [
     date: '2026-05-20',
     category: 'Programming',
     tags: ['GitHub', 'Version Control', 'Collaboration'],
-    coverImage: '/public/images/blog/github-students.svg',
+    coverImage: 'public/images/blog/github-students.svg',
     summary: 'A practical Git and GitHub workflow for student engineering projects.',
     content: [
       'This placeholder article focuses on commit hygiene, branch usage, and portfolio-ready repositories.',

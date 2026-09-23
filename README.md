@@ -90,7 +90,7 @@ Replace `/public/cv.pdf` with your actual PDF using the same filename.
 
 ## Custom domain setup
 
-1. Replace `YOUR-DOMAIN.com` in:
+1. Replace `www.macakr.com` in:
    - `/CNAME`
    - canonical/OG URLs in `/index.html`, `/blog/index.html`, `/blog/post.html`
    - `/sitemap.xml` and `/robots.txt`
