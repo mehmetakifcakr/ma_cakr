@@ -26,7 +26,11 @@ Preview the repository with any static HTTP server. Paths work from a custom dom
 
 ## Publication status
 
-This is a completed local preview and source proposal; no Azure app or domain registration is included yet. The HTML intentionally retains `noindex, nofollow` while the owner reviews the revised design. Remove that metadata from `tools/build.py` and regenerate when preparing the public release. Configure canonical/social-preview URLs after the real deployment URL is known.
+This is a completed local preview and source proposal; no Azure app or domain registration is included yet. With `SITE_BASE_URL` unset or empty, `python3 tools/build.py` produces the review draft with `noindex, nofollow` and removes any previously generated `robots.txt` and `sitemap.xml`.
+
+For the public release, set `SITE_BASE_URL` to the exact public HTTPS origin shown by Azure, then run `python3 tools/build.py`. Supply only the scheme and hostname, without a path, port, credentials, query or fragment. Local addresses, IP addresses, reserved domains and obvious placeholder hosts are rejected before any output is written. Use the real deployed address; do not invent a domain or edit the generated metadata by hand.
+
+The release build enables indexing and generates page-specific canonical URLs, reciprocal English/Turkish `hreflang` links with English as `x-default`, absolute Open Graph page/image URLs, `robots.txt` and an eight-page `sitemap.xml`. Commit the regenerated pages and discovery files with the source. Azure's `skip_app_build: true` deploys these checked-in files; it does not run the generator or set `SITE_BASE_URL`. If a deployment workflow runs the generator instead, pass the actual origin explicitly and require a nonempty value in the release step so a missing variable cannot publish the review draft.
 
 The prior `www.macakr.com` CNAME is not carried into this source because the owner confirmed no domain was registered. Do not re-add it until domain control is verified.
 
