@@ -1,11 +1,70 @@
 from pathlib import Path
 from html import escape as e
-import json, math, re
+from urllib.parse import urlsplit
+import ipaddress, json, math, os, re
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT
 D = json.loads((ROOT / 'content/site.json').read_text())
 TR = D['translations_tr']
+
+def release_base_url(value):
+ """Accept a public HTTPS origin only; leave local previews unindexed."""
+ if not value.strip():
+  return None
+ value = value.strip()
+ try:
+  parts = urlsplit(value)
+  host = (parts.hostname or '').lower()
+  port = parts.port
+ except ValueError:
+  raise SystemExit('SITE_BASE_URL must be the real public HTTPS site origin.')
+ labels = host.split('.')
+ reserved = {'localhost', 'local', 'internal', 'invalid', 'test', 'example'}
+ placeholders = {'example', 'placeholder', 'your-site', 'your-app', 'your-domain', 'yourdomain'}
+ valid_host = (
+  len(labels) >= 2 and len(host) <= 253
+  and all(re.fullmatch(r'[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?', label) for label in labels)
+  and labels[-1] not in reserved
+  and not any(label in placeholders for label in labels)
+  and host not in {'example.com', 'example.net', 'example.org'}
+  and not host.endswith(('.example.com', '.example.net', '.example.org'))
+ )
+ try:
+  ipaddress.ip_address(host)
+  valid_host = False
+ except ValueError:
+  pass
+ if (parts.scheme != 'https' or not valid_host or parts.netloc.lower() != host
+     or any(char.isspace() for char in value) or parts.username or parts.password
+     or port is not None or parts.path not in ('', '/') or parts.query or parts.fragment):
+  raise SystemExit('SITE_BASE_URL must be the real public HTTPS site origin, without a path, port, credentials, query or fragment; local and placeholder hosts are not allowed.')
+ return 'https://' + host
+
+SITE_BASE_URL = release_base_url(os.environ.get('SITE_BASE_URL', ''))
+
+def page_url(lang='en', article_id=None):
+ path = ('tr/' if lang == 'tr' else '') + (f'journal/{article_id}/' if article_id else '')
+ return f'{SITE_BASE_URL}/{path}'
+
+def publication_head(lang, article_id=None):
+ if not SITE_BASE_URL:
+  return '<meta name="robots" content="noindex, nofollow">'
+ alternates = ''.join(f'<link rel="alternate" hreflang="{language}" href="{e(page_url(language, article_id))}">' for language in ['en', 'tr'])
+ return (f'<meta name="robots" content="index, follow"><link rel="canonical" href="{e(page_url(lang, article_id))}">'
+         + alternates + f'<link rel="alternate" hreflang="x-default" href="{e(page_url("en", article_id))}">'
+         + f'<meta property="og:url" content="{e(page_url(lang, article_id))}"><meta property="og:image" content="{e(SITE_BASE_URL)}/assets/portrait.jpg">')
+
+def build_discovery_files():
+ if not SITE_BASE_URL:
+  # Avoid retaining a previous release URL when regenerating a draft.
+  for filename in ['robots.txt', 'sitemap.xml']:
+   (OUT / filename).unlink(missing_ok=True)
+  return
+ urls = ''.join(f'<url><loc>{e(page_url(lang, article_id))}</loc></url>'
+                for lang in ['en', 'tr'] for article_id in [None] + [note['id'] for note in D['journal']])
+ (OUT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + urls + '</urlset>\n')
+ (OUT / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {SITE_BASE_URL}/sitemap.xml\n')
 
 UI = {
 'en': {
@@ -154,7 +213,7 @@ def build(lang='en', article_id=None):
   content=f'''<article class="article-page wrap"><a class="article-back animated-link" href="{home}#journal">{icon('arrow')}{u['back']}</a><header class="article-header"><p class="eyebrow">{u['note_label']} <span>/</span> {e(n['category'])}</p><h1>{e(n['title'])}</h1><p class="article-subtitle">{e(n['subtitle'])}</p><div class="article-byline"><img src="{a('portrait.jpg')}" alt="" width="42" height="42"><span>Mehmet Akif Çakır<small>{u['author_role']}</small></span><span class="article-time">{minutes(n)} {u['read_time']}</span></div></header><div class="article-layout"><aside class="article-sidebar"><span class="eyebrow">{u['source_repository']}</span><a class="animated-link" href="{p['repository']}" target="_blank" rel="noopener noreferrer">{e(p['title'])}{icon('arrow')}</a><span class="article-stage">{e(p['stage'])}</span></aside><div class="article-body"><figure class="article-illustration">{artwork(p['id'],'article')}</figure><div class="article-paragraphs">{paragraphs}</div><div class="article-source-note">{u['source_note']}</div><section class="article-sources"><h2>{u['sources']}</h2><ul>{sources}</ul></section></div></div><section class="related-notes"><p class="eyebrow">{u['related']}</p><div>{related}</div></section></article>'''
  metadata=json.dumps({'@context':'https://schema.org','@type':'Person','name':'Mehmet Akif Çakır','alternateName':'ma_cakr','jobTitle':u['role'],'image':D['github']['avatarUrl'],'sameAs':[c['url'] for c in D['contacts'] if c['type'] in ['github','linkedin','instagram']]},ensure_ascii=False)
  html=f'''<!doctype html>
-<html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f1e9"><meta name="robots" content="noindex, nofollow"><title>{e(title)}</title><meta name="description" content="{e(desc)}"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:type" content="{'article' if article_id else 'website'}"><meta property="og:locale" content="{'tr_TR' if lang=='tr' else 'en_US'}"><link rel="icon" href="{a('brand-mark.svg')}" type="image/svg+xml"><link rel="stylesheet" href="{rel}styles.css"><script src="{rel}app.js" defer></script><script type="application/ld+json">{metadata}</script></head><body id="top" data-lang="{lang}"><a class="skip-link" href="#main">{u['skip']}</a><canvas id="ambient-trail" aria-hidden="true"></canvas>{header}<main id="main">{content}</main>{footer}{motion}</body></html>'''
+<html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f1e9">{publication_head(lang, article_id)}<title>{e(title)}</title><meta name="description" content="{e(desc)}"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:type" content="{'article' if article_id else 'website'}"><meta property="og:locale" content="{'tr_TR' if lang=='tr' else 'en_US'}"><link rel="icon" href="{a('brand-mark.svg')}" type="image/svg+xml"><link rel="stylesheet" href="{rel}styles.css"><script src="{rel}app.js" defer></script><script type="application/ld+json">{metadata}</script></head><body id="top" data-lang="{lang}"><a class="skip-link" href="#main">{u['skip']}</a><canvas id="ambient-trail" aria-hidden="true"></canvas>{header}<main id="main">{content}</main>{footer}{motion}</body></html>'''
  path=OUT/current
  path.parent.mkdir(parents=True,exist_ok=True)
  path.write_text(html)
@@ -162,6 +221,7 @@ def build(lang='en', article_id=None):
 for lang in ['en','tr']:
  build(lang)
  for note in D['journal']:build(lang,note['id'])
+build_discovery_files()
 
 mark_svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#f5f1e9"/><g fill="none" stroke-linecap="square"><path d="M10 47V13l22 22 22-22v34" stroke="#152a44" stroke-width="4"/><path d="m19 48 13-32 13 32M24 37h16" stroke="#ad5c3a" stroke-width="3"/></g></svg>'
 (OUT/'assets/brand-mark.svg').write_text(mark_svg)
