@@ -26,21 +26,21 @@ Preview the repository with any static HTTP server. Paths work from a custom dom
 
 ## Publication status
 
-This is a completed local preview and source proposal; no Azure app or domain registration is included yet. With `SITE_BASE_URL` unset or empty, `python3 tools/build.py` produces the review draft with `noindex, nofollow` and removes any previously generated `robots.txt` and `sitemap.xml`.
+Live site: [ma_cakr](https://gray-pond-0fbfc1c10.3.azurestaticapps.net/), hosted on Azure Static Web Apps **Free**. The connected deployment branch is `codex/ma-cakr-editorial`. A push to that branch regenerates the eight English/Turkish pages and deploys only the public files; editing `content/site.json` is enough to update content through this workflow.
 
-For the public release, set `SITE_BASE_URL` to the exact public HTTPS origin shown by Azure, then run `python3 tools/build.py`. Supply only the scheme and hostname, without a path, port, credentials, query or fragment. Local addresses, IP addresses, reserved domains and obvious placeholder hosts are rejected before any output is written. Use the real deployed address; do not invent a domain or edit the generated metadata by hand.
+With `SITE_BASE_URL` unset or empty, `python3 tools/build.py` produces a local review draft with `noindex, nofollow` and removes previously generated discovery files. For a release, supply the actual public HTTPS base URL. A safe deployment subdirectory is supported; ports, credentials, query strings, fragments, local addresses and placeholder hosts are rejected before output is written.
 
-The release build enables indexing and generates page-specific canonical URLs, reciprocal English/Turkish `hreflang` links with English as `x-default`, absolute Open Graph page/image URLs, `robots.txt` and an eight-page `sitemap.xml`. Commit the regenerated pages and discovery files with the source. Azure's `skip_app_build: true` deploys these checked-in files; it does not run the generator or set `SITE_BASE_URL`. If a deployment workflow runs the generator instead, pass the actual origin explicitly and require a nonempty value in the release step so a missing variable cannot publish the review draft.
+The Azure workflow supplies `https://gray-pond-0fbfc1c10.3.azurestaticapps.net` and generates canonical URLs, reciprocal English/Turkish language metadata, social-preview URLs, `robots.txt` and the eight-page `sitemap.xml`. It then packages the public pages, assets and headers into `_site/` and deploys without a framework build. Deployment credentials are stored as a GitHub Actions secret; never put a token in source files.
 
-The prior `www.macakr.com` CNAME is not carried into this source because the owner confirmed no domain was registered. Do not re-add it until domain control is verified.
+No custom domain has been registered or connected. The prior `www.macakr.com` CNAME is excluded because domain control has not been established. Register and verify ownership before adding a custom domain.
 
-## Azure setup
+## Hosting and domain benefits
 
-Activate Azure for Students with the owner's Microsoft account and student verification, then create **Static Web Apps / Free**. Connect this repository and the intended publication branch. The checked-in pages can deploy without a framework build: app location `/`, output location empty, and `skip_app_build: true`. Let Azure create the matching deployment workflow and repository secret for that app. Never commit a deployment token.
+The app's Free SKU and the Azure subscription's lifecycle are separate: the hosting plan does not keep a disabled or expired subscription active. Review the account's actual credit, spending limit and expiration in Azure before relying on a long-term deployment. No paid upgrade is part of this source.
 
-Azure for Students offers $100 usable within 12 months, without a credit card. Static Web Apps Free is an always-free plan subject to its limits; these are separate benefits. Student eligibility and offer redemption must be confirmed in the owner's account.
+Azure for Students offers $100 usable within 12 months to eligible students, without a credit card. Actual redemption, resource availability and regional restrictions are determined by the account. The general Azure free-account credit is a different offer.
 
-For a custom domain, the Student Developer Pack currently lists first-year offers through Name.com, Namecheap (.me) and .TECH. Availability, account eligibility and renewal terms are checked at redemption. A `.com` domain is not covered by these listed free offers.
+The Student Developer Pack currently lists first-year domain offers through Name.com, Namecheap (.me) and .TECH. Availability, eligibility and renewal terms must be checked at redemption. A `.com` domain is not included in those listed free offers.
 
 ## Assets and sources
 
