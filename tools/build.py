@@ -9,7 +9,7 @@ D = json.loads((ROOT / 'content/site.json').read_text())
 TR = D['translations_tr']
 
 def release_base_url(value):
- """Accept a public HTTPS origin only; leave local previews unindexed."""
+ """Accept a public HTTPS base URL with an optional safe deployment path."""
  if not value.strip():
   return None
  value = value.strip()
@@ -18,7 +18,7 @@ def release_base_url(value):
   host = (parts.hostname or '').lower()
   port = parts.port
  except ValueError:
-  raise SystemExit('SITE_BASE_URL must be the real public HTTPS site origin.')
+  raise SystemExit('SITE_BASE_URL must be the real public HTTPS site base URL.')
  labels = host.split('.')
  reserved = {'localhost', 'local', 'internal', 'invalid', 'test', 'example'}
  placeholders = {'example', 'placeholder', 'your-site', 'your-app', 'your-domain', 'yourdomain'}
@@ -35,11 +35,13 @@ def release_base_url(value):
   valid_host = False
  except ValueError:
   pass
+ segments = parts.path.removeprefix('/').removesuffix('/').split('/') if parts.path not in ('', '/') else []
+ valid_path = all(segment not in {'.', '..'} and re.fullmatch(r'[A-Za-z0-9._~-]+', segment) for segment in segments)
  if (parts.scheme != 'https' or not valid_host or parts.netloc.lower() != host
      or any(char.isspace() for char in value) or parts.username or parts.password
-     or port is not None or parts.path not in ('', '/') or parts.query or parts.fragment):
-  raise SystemExit('SITE_BASE_URL must be the real public HTTPS site origin, without a path, port, credentials, query or fragment; local and placeholder hosts are not allowed.')
- return 'https://' + host
+     or port is not None or not valid_path or '?' in value or '#' in value):
+  raise SystemExit('SITE_BASE_URL must be the real public HTTPS site base URL, with only safe path segments and no port, credentials, query or fragment; local and placeholder hosts, dot traversal and encoded paths are not allowed.')
+ return 'https://' + host + parts.path.rstrip('/')
 
 SITE_BASE_URL = release_base_url(os.environ.get('SITE_BASE_URL', ''))
 
