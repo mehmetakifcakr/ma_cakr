@@ -1,0 +1,482 @@
+{
+  "github": {
+    "username": "mehmetakifcakr",
+    "name": "Mehmet Akif Çakır",
+    "profileUrl": "https://github.com/mehmetakifcakr",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/118133932?v=4",
+    "readmeSource": "https://github.com/mehmetakifcakr/mehmetakifcakr/blob/main/README.md"
+  },
+  "bio": {
+    "short": "Mechatronics engineering student building open-source tools for robotics, embedded systems and reproducible software.",
+    "long": "I'm Mehmet Akif Çakır, a mechatronics engineering student at Manisa Celal Bayar University, based in Izmir, Türkiye. I explore the connection between physical systems and software through small, inspectable open-source projects: deterministic decision engines, robotics abstractions and local research simulations. This is where I share the code, the design decisions and the next questions.",
+    "role": "Mechatronics Engineering Student",
+    "location": "Izmir, Türkiye",
+    "university": "Manisa Celal Bayar University",
+    "focus": [
+      "Robotics",
+      "Embedded systems",
+      "Reproducible software",
+      "Simulation"
+    ],
+    "languages": [
+      "Python",
+      "C++",
+      "Rust"
+    ],
+    "hardwareInterests": [
+      "Arduino",
+      "ESP32",
+      "Motor control",
+      "Sensor integration",
+      "3D CAD and prototyping"
+    ],
+    "source": "https://github.com/mehmetakifcakr/mehmetakifcakr/blob/main/README.md"
+  },
+  "projects": [
+    {
+      "id": "recovertick",
+      "title": "RecoverTick",
+      "category": "Embedded systems",
+      "stage": "0.1.0 MVP",
+      "fork": false,
+      "repository": "https://github.com/mehmetakifcakr/recovertick",
+      "description": "A Rust decision engine that makes controller decisions replayable, with bounded retries and a fixed-capacity journal.",
+      "shortDescription": "Deterministic decisions. Bounded recovery. Inspectable replay.",
+      "technology": [
+        "Rust",
+        "no_std",
+        "Zero dependencies",
+        "Fixed-capacity journal"
+      ],
+      "implemented": [
+        "Typed application state, events, faults and effect intents",
+        "Logical ticks and bounded decision retries",
+        "Terminal fallback and allocation-free journal",
+        "Semantic replay verification from a known initial state"
+      ],
+      "limitation": "Decision recovery is separate from actuator I/O. Hardware recovery, durable logging, safety certification and MCU timing guarantees are not claimed.",
+      "evidence": [
+        {
+          "url": "https://api.github.com/repos/mehmetakifcakr/recovertick",
+          "detail": "Owner mehmetakifcakr; fork:false; Rust; public"
+        },
+        {
+          "url": "https://github.com/mehmetakifcakr/recovertick/blob/main/README.md",
+          "detail": "Working 0.1.0 MVP, architecture, recovery and explicit limits"
+        },
+        {
+          "url": "https://github.com/mehmetakifcakr/recovertick/blob/main/Cargo.toml",
+          "detail": "Version 0.1.0, Rust 1.85, empty dependencies/dev-dependencies, unsafe code forbidden"
+        },
+        {
+          "url": "https://github.com/mehmetakifcakr/recovertick/blob/main/src/replay.rs",
+          "detail": "Replay recomputes records and checks sequence, full snapshots and outcomes"
+        }
+      ]
+    },
+    {
+      "id": "openrobotkit",
+      "title": "OpenRobotKit",
+      "category": "Robotics",
+      "stage": "Early development",
+      "fork": false,
+      "repository": "https://github.com/mehmetakifcakr/OpenRobotKit",
+      "description": "The beginning of a reusable robotics toolkit, currently a small Python motor abstraction with Arduino and ESP32 modules on the roadmap.",
+      "shortDescription": "Starting small at the boundary between code and motion.",
+      "technology": [
+        "Python",
+        "Motor abstraction"
+      ],
+      "roadmapTechnology": [
+        "Arduino",
+        "ESP32",
+        "PID",
+        "Sensors",
+        "OpenCV"
+      ],
+      "implemented": [
+        "Motor class with configurable initial speed",
+        "set_speed method updates software state",
+        "stop method resets speed to zero"
+      ],
+      "limitation": "The current class models speed in software. It has no pin configuration, PWM output, serial adapter, hardware acknowledgement or supplied behavioral tests; broader modules remain roadmap items.",
+      "evidence": [
+        {
+          "url": "https://api.github.com/repos/mehmetakifcakr/OpenRobotKit",
+          "detail": "Owner mehmetakifcakr; fork:false; description explicitly calls it early-stage"
+        },
+        {
+          "url": "https://github.com/mehmetakifcakr/OpenRobotKit/blob/main/src/motor.py",
+          "detail": "The small Motor implementation is the current executable source"
+        },
+        {
+          "url": "https://github.com/mehmetakifcakr/OpenRobotKit/blob/main/README.md",
+          "detail": "Ambitious module list and staged roadmap; do not treat planned features as complete"
+        },
+        {
+          "url": "https://api.github.com/repos/mehmetakifcakr/OpenRobotKit/git/trees/main?recursive=1",
+          "detail": "Repository source tree contains src/motor.py; docs/tests paths are placeholder READMEs"
+        }
+      ]
+    },
+    {
+      "id": "ai-trader-paper",
+      "title": "AI Trader Paper",
+      "category": "Simulation",
+      "stage": "Alpha · local simulation",
+      "fork": false,
+      "repository": "https://github.com/mehmetakifcakr/ai-trader-paper",
+      "description": "An offline-first Python research simulator with technical features, a small ML model and a shared fictional portfolio.",
+      "shortDescription": "A transparent sandbox for studying decisions and portfolio state.",
+      "technology": [
+        "Python",
+        "NumPy",
+        "pandas",
+        "scikit-learn"
+      ],
+      "optionalTechnology": [
+        "yfinance",
+        "pytest"
+      ],
+      "implemented": [
+        "Offline synthetic demo",
+        "Dry-run intent evaluation and sequential local paper fills",
+        "Shared cash, portfolio exposure and position limits",
+        "Illustrative fees, spread, slippage and mark-to-market equity",
+        "Latched session loss cutoff and supplied-price stop/target handling"
+      ],
+      "limitation": "Paper means an in-memory local simulator. No broker connection, live order adapter, persistent account or validated portfolio backtest is included; model scores do not establish profitability.",
+      "evidence": [
+        {
+          "url": "https://api.github.com/repos/mehmetakifcakr/ai-trader-paper",
+          "detail": "Owner mehmetakifcakr; fork:false; Python; public"
+        },
+        {
+          "url": "https://github.com/mehmetakifcakr/ai-trader-paper/blob/main/README.md",
+          "detail": "Alpha status, offline demo, supported modes and explicit limits"
+        },
+        {
+          "url": "https://github.com/mehmetakifcakr/ai-trader-paper/blob/main/pyproject.toml",
+          "detail": "Version 0.1.0, Python >=3.10, NumPy/pandas/scikit-learn; optional yfinance/pytest"
+        },
+        {
+          "url": "https://github.com/mehmetakifcakr/ai-trader-paper/blob/main/docs/DESIGN.md",
+          "detail": "Sequential shared-account flow, boundary decisions and unimplemented roadmap"
+        }
+      ]
+    }
+  ],
+  "journal": [
+    {
+      "id": "replaying-a-controller-decision",
+      "title": "Replaying a controller decision",
+      "subtitle": "The engineering boundary behind RecoverTick's retry engine.",
+      "category": "Embedded systems",
+      "project": "recovertick",
+      "readingTime": "2 min read",
+      "date": null,
+      "publicationNote": "Repository-based engineering note prepared for the site. No invented publication date or first-person test result.",
+      "paragraphs": [
+        "A controller failure is easier to investigate when the decision can be reconstructed from the same inputs. RecoverTick explores that idea with a small Rust engine: the application provides a pure model, while the engine manages logical time, recovery policy and an allocation-free decision journal. The current repository is a 0.1.0 MVP with no third-party Cargo dependencies.",
+        "The key separation is between choosing an action and performing it. A model receives typed state and events, then proposes a state transition and an optional effect intent. The engine returns that intent to an external driver. A motor driver, sensor adapter or asynchronous queue remains outside the decision core. This makes the model inspectable without pretending that a successful decision guarantees a successful physical action.",
+        "Recovery has an explicit budget. If a model evaluation fails, its event is retained while domain state stays unchanged. A retry command can evaluate that event again at or after its logical deadline. Fresh events cannot silently replace pending work. When the retry budget is exhausted, the configured fallback is committed and the engine halts. Backward ticks and other invalid commands are rejected without altering state or the journal.",
+        "Every accepted command produces one record. Replay starts from the original state with the same model, policy and fallback, then recomputes decisions and compares sequence numbers, snapshots and outcomes. It is a semantic consistency check rather than cryptographic authentication. A valid prefix can still pass, so detecting a missing tail needs an external expected record count or manifest.",
+        "Those boundaries define the next questions clearly. Durable archives belong to the caller, effect delivery needs its own acknowledgement strategy, and hardware timing still needs measurement on the target. RecoverTick is useful as an inspectable experiment in predictable decision handling; it does not claim safety certification or automatic hardware recovery."
+      ],
+      "sources": [
+        {
+          "label": "Project README",
+          "url": "https://github.com/mehmetakifcakr/recovertick/blob/main/README.md"
+        },
+        {
+          "label": "Replay verifier",
+          "url": "https://github.com/mehmetakifcakr/recovertick/blob/main/src/replay.rs"
+        },
+        {
+          "label": "Package manifest",
+          "url": "https://github.com/mehmetakifcakr/recovertick/blob/main/Cargo.toml"
+        }
+      ]
+    },
+    {
+      "id": "a-small-interface-for-motion",
+      "title": "A small interface for motion",
+      "subtitle": "What exists today in OpenRobotKit, and what a hardware layer would need next.",
+      "category": "Robotics",
+      "project": "openrobotkit",
+      "readingTime": "2 min read",
+      "date": null,
+      "publicationNote": "Repository-based engineering note. Suggested future work is described as future work, not implemented behavior.",
+      "paragraphs": [
+        "OpenRobotKit starts with an ambitious direction: reusable tools and examples for robotics projects using Python, Arduino and ESP32. The present implementation is much smaller than that roadmap. Its executable source is a Python Motor class with an initial speed value, a set_speed method and a stop method. That small starting point makes the current boundary easy to inspect.",
+        "Today, changing speed updates a Python attribute. Calling stop sets the value to zero. There is no PWM output, serial message, pin configuration or connection to a physical controller in this class. Describing that accurately matters: a software representation of motor state is a useful foundation, but it is not yet a working hardware driver. The repository's broader module list should be read as direction for development.",
+        "A useful next design question is where this interface should end. A future driver could translate a requested speed into hardware-specific commands while keeping the application-facing API small. Before doing that, the contract would need to define units, valid ranges, direction, failure behavior and the difference between a requested value and an observed value. These are design questions, not capabilities the current implementation provides.",
+        "The same caution applies to the rest of the roadmap. PID control, sensor calibration, Bluetooth, Wi-Fi, camera support, OpenCV helpers and other modules appear in the project plan. They should enter a portfolio as implemented features only when corresponding code, examples and verification exist. The current documentation and test-related directories contain placeholders rather than a demonstrated coverage suite.",
+        "For this stage, the most useful milestone is a complete, understandable vertical slice: a documented motor contract, a real adapter, a runnable example and tests for the software behavior. OpenRobotKit is an early exploration of that path. Keeping the description proportional to the code leaves room for the project to grow without obscuring what a reader can actually run today."
+      ],
+      "sources": [
+        {
+          "label": "Project README and roadmap",
+          "url": "https://github.com/mehmetakifcakr/OpenRobotKit/blob/main/README.md"
+        },
+        {
+          "label": "Current Motor implementation",
+          "url": "https://github.com/mehmetakifcakr/OpenRobotKit/blob/main/src/motor.py"
+        },
+        {
+          "label": "Repository source tree",
+          "url": "https://github.com/mehmetakifcakr/OpenRobotKit"
+        }
+      ]
+    },
+    {
+      "id": "one-portfolio-many-candidates",
+      "title": "One portfolio, many candidates",
+      "subtitle": "Why a local research simulator needs shared state and explicit limits.",
+      "category": "Simulation",
+      "project": "ai-trader-paper",
+      "readingTime": "2 min read",
+      "date": null,
+      "publicationNote": "Software architecture note, not trading guidance. No performance or profitability claim.",
+      "paragraphs": [
+        "A research script can score several symbols independently and still produce an impossible combined portfolio. Each candidate may appear affordable on its own while collectively exceeding the same cash balance or exposure limit. AI Trader Paper explores this problem through an offline-first Python prototype with one shared fictional portfolio per market and session.",
+        "Its pipeline moves from input bars to technical features, a small machine-learning model and heuristic scoring. Cost-aware sizing and a second cost check come before an intent or a local fill. In paper mode, symbols are evaluated in a deterministic sequence against a shared engine, so earlier fills affect the cash and exposure available to later candidates. That ordering is reproducible; it is not a claim of optimal portfolio selection.",
+        "Portfolio state includes cash, positions and equity valued using supplied prices. Illustrative fees and fill impact affect the simulation, and a session loss cutoff latches once breached. Protective exits can remain available after new entries are blocked. These mechanisms make assumptions visible, but a threshold is still a trigger rather than a guarantee that simulated losses can never exceed it.",
+        "The dry-run mode has a different meaning. It evaluates independent proposals without changing the portfolio or reserving capital. Those proposals must not be treated as a jointly approved allocation. The offline demo uses synthetic observations and fictional balances; it may reject every candidate. Its generated movement is not a historical backtest, and the model's score is not a calibrated probability of success.",
+        "Version 0.1 is deliberately limited to a one-shot, in-memory session. Restarting creates a new account; there is no durable journal, exchange calendar, continuous position monitor or broker adapter. Stops only react when another price is supplied. Durable state and portfolio-level out-of-sample evaluation belong to the documented roadmap. The project is a transparent software sandbox for studying those decisions, with no evidence claimed for profitable returns."
+      ],
+      "sources": [
+        {
+          "label": "Project README and limits",
+          "url": "https://github.com/mehmetakifcakr/ai-trader-paper/blob/main/README.md"
+        },
+        {
+          "label": "Design and next steps",
+          "url": "https://github.com/mehmetakifcakr/ai-trader-paper/blob/main/docs/DESIGN.md"
+        },
+        {
+          "label": "Package dependencies",
+          "url": "https://github.com/mehmetakifcakr/ai-trader-paper/blob/main/pyproject.toml"
+        }
+      ]
+    }
+  ],
+  "translations_tr": {
+    "bio": {
+      "short": "Robotik, gömülü sistemler ve tekrarlanabilir yazılımlar için açık kaynak araçlar geliştiren bir mekatronik mühendisliği öğrencisi.",
+      "long": "Ben Mehmet Akif Çakır. Manisa Celal Bayar Üniversitesi'nde mekatronik mühendisliği öğrencisiyim ve İzmir'de yaşıyorum. Fiziksel sistemler ile yazılımın kesişimini küçük, incelenebilir açık kaynak projelerle araştırıyorum: deterministik karar motorları, robotik soyutlamalar ve yerel araştırma simülasyonları. Burada kodu, tasarım kararlarını ve sıradaki soruları paylaşıyorum.",
+      "role": "Mekatronik Mühendisliği Öğrencisi",
+      "location": "İzmir, Türkiye",
+      "university": "Manisa Celal Bayar Üniversitesi",
+      "focus": [
+        "Robotik",
+        "Gömülü sistemler",
+        "Tekrarlanabilir yazılım",
+        "Simülasyon"
+      ],
+      "languages": [
+        "Python",
+        "C++",
+        "Rust"
+      ],
+      "hardwareInterests": [
+        "Arduino",
+        "ESP32",
+        "Motor kontrolü",
+        "Sensör entegrasyonu",
+        "3B CAD ve prototipleme"
+      ]
+    },
+    "contacts": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "instagram": "Instagram",
+      "email": "E-posta",
+      "orcid": "ORCID",
+      "facebook": "Facebook",
+      "snapchat": "Snapchat",
+      "nsosyal": "N Sosyal"
+    },
+    "projects": [
+      {
+        "id": "recovertick",
+        "title": "RecoverTick",
+        "category": "Gömülü sistemler",
+        "stage": "0.1.0 MVP",
+        "description": "Kontrolcü kararlarını yeniden oynatılabilir hâle getiren; sınırlı yeniden deneme bütçesi ve sabit kapasiteli günlük sunan bir Rust karar motoru.",
+        "shortDescription": "Deterministik kararlar. Sınırlı kurtarma. İncelenebilir yeniden oynatma.",
+        "technology": [
+          "Rust",
+          "no_std",
+          "Sıfır bağımlılık",
+          "Sabit kapasiteli günlük"
+        ],
+        "implemented": [
+          "Türleri açıkça tanımlanmış uygulama durumu, olaylar, hatalar ve etki niyetleri",
+          "Mantıksal zaman adımları ve sınırlı karar tekrarları",
+          "Sonlandırıcı yedek geçiş ve dinamik bellek ayırmayan günlük",
+          "Bilinen bir başlangıç durumundan anlamsal yeniden oynatma doğrulaması"
+        ],
+        "limitation": "Karar düzeyindeki kurtarma, eyleyici giriş/çıkış işlemlerinden ayrıdır. Donanım kurtarması, kalıcı günlük, güvenlik sertifikasyonu veya mikrodenetleyici zamanlama garantisi sunulmaz."
+      },
+      {
+        "id": "openrobotkit",
+        "title": "OpenRobotKit",
+        "category": "Robotik",
+        "stage": "Erken geliştirme",
+        "description": "Yeniden kullanılabilir bir robotik araç setinin başlangıcı. Şu anda küçük bir Python motor soyutlaması içeriyor; Arduino ve ESP32 modülleri yol haritasında.",
+        "shortDescription": "Kod ile hareketin kesişiminde küçük bir başlangıç.",
+        "technology": [
+          "Python",
+          "Motor soyutlaması"
+        ],
+        "roadmapTechnology": [
+          "Arduino",
+          "ESP32",
+          "PID",
+          "Sensörler",
+          "OpenCV"
+        ],
+        "implemented": [
+          "Başlangıç hızı ayarlanabilen Motor sınıfı",
+          "Yazılımdaki hız durumunu güncelleyen set_speed metodu",
+          "Hızı sıfırlayan stop metodu"
+        ],
+        "limitation": "Mevcut sınıf, hız değerini yazılım içinde modeller. Pin yapılandırması, PWM çıkışı, seri iletişim adaptörü, donanım onayı veya sağlanmış davranış testleri içermez. Diğer modüller yol haritasındadır."
+      },
+      {
+        "id": "ai-trader-paper",
+        "title": "AI Trader Paper",
+        "category": "Simülasyon",
+        "stage": "Alfa · yerel simülasyon",
+        "description": "Teknik özellikler, küçük bir makine öğrenmesi modeli ve ortak bir sanal portföy içeren, çevrimdışı çalışmayı temel alan Python araştırma simülatörü.",
+        "shortDescription": "Kararları ve portföy durumunu incelemek için şeffaf bir deneme ortamı.",
+        "technology": [
+          "Python",
+          "NumPy",
+          "pandas",
+          "scikit-learn"
+        ],
+        "optionalTechnology": [
+          "yfinance",
+          "pytest"
+        ],
+        "implemented": [
+          "Sentetik verili çevrimdışı demo",
+          "Portföyü değiştirmeden karar değerlendirmesi ve sırayla uygulanan yerel sanal işlemler",
+          "Ortak nakit bakiyesi, portföy riski ve pozisyon limitleri",
+          "Örnek komisyon, alış-satış farkı, kayma ve sağlanan fiyatlarla portföy değerlemesi",
+          "Tetiklendikten sonra etkin kalan seans zarar sınırı ve sağlanan fiyatlara bağlı stop/hedef işlemleri"
+        ],
+        "limitation": "Buradaki paper modu, bellekte çalışan yerel bir simülatördür. Aracı kurum bağlantısı, gerçek emir adaptörü, kalıcı hesap veya doğrulanmış portföy geriye dönük testi içermez. Model skorları kârlılık kanıtı değildir."
+      }
+    ],
+    "journal": [
+      {
+        "id": "replaying-a-controller-decision",
+        "title": "Bir kontrolcü kararını yeniden oynatmak",
+        "subtitle": "RecoverTick'in yeniden deneme motorunun ardındaki mühendislik sınırı.",
+        "category": "Gömülü sistemler",
+        "project": "recovertick",
+        "readingTime": "2 dk okuma",
+        "paragraphs": [
+          "Bir kontrolcüdeki hatayı incelemek, aynı girdilerden aynı karar yeniden oluşturulabildiğinde kolaylaşır. RecoverTick bu fikri küçük bir Rust motoruyla araştırıyor: uygulama saf bir model sağlarken motor mantıksal zamanı, kurtarma politikasını ve dinamik bellek ayırmayan karar günlüğünü yönetiyor. Mevcut depo, üçüncü taraf Cargo bağımlılığı olmayan bir 0.1.0 MVP sürümü.",
+          "Temel ayrım, bir eylemi seçmek ile onu gerçekleştirmek arasında. Model, türleri açıkça tanımlanmış durum ve olayları alıyor; ardından bir durum geçişi ve isteğe bağlı bir etki niyeti öneriyor. Motor bu niyeti haricî bir sürücüye döndürüyor. Motor sürücüsü, sensör adaptörü veya asenkron kuyruk, karar çekirdeğinin dışında kalıyor. Böylece model incelenebilir oluyor; başarılı bir kararın fiziksel eylemin de başarıyla gerçekleştiğini garanti ettiği varsayılmıyor.",
+          "Kurtarmanın açık bir bütçesi var. Model değerlendirmesi başarısız olursa olay korunuyor, uygulamanın mevcut durumu ise değişmiyor. Yeniden deneme komutu, bu olayı belirlenen mantıksal son tarihte veya sonrasında tekrar değerlendirebiliyor. Yeni olaylar, bekleyen işin yerini sessizce alamıyor. Deneme bütçesi tükendiğinde yapılandırılmış yedek geçiş uygulanıyor ve motor duruyor. Geriye giden zaman adımları ve diğer geçersiz komutlar, durum veya günlük değişmeden reddediliyor.",
+          "Kabul edilen her komut bir kayıt üretiyor. Yeniden oynatma; özgün durum, aynı model, politika ve yedek geçiş ile başlıyor. Kararlar tekrar hesaplanıyor; sıra numaraları, durum görüntüleri ve sonuçlar karşılaştırılıyor. Bu, kriptografik kimlik doğrulama değil, anlamsal bir tutarlılık kontrolü. Geçerli bir kayıt dizisinin yalnızca başlangıç kısmı da kontrolü geçebilir. Bu nedenle sondan eksilen kayıtları tespit etmek için dışarıdan beklenen kayıt sayısı veya bir bildirim dosyası gerekiyor.",
+          "Bu sınırlar, sonraki soruları da açıkça ortaya koyuyor. Kalıcı arşivleme çağıran uygulamanın sorumluluğunda; etki iletimi kendi onay stratejisine ihtiyaç duyuyor ve donanım zamanlaması hedef cihaz üzerinde ölçülmeyi bekliyor. RecoverTick, öngörülebilir karar yönetimini incelemek için bir deney sunuyor. Güvenlik sertifikasyonu veya otomatik donanım kurtarması iddiasında bulunmuyor."
+        ],
+        "sourceLabels": [
+          "Proje README dosyası",
+          "Yeniden oynatma doğrulayıcısı",
+          "Paket tanımı"
+        ]
+      },
+      {
+        "id": "a-small-interface-for-motion",
+        "title": "Hareket için küçük bir arayüz",
+        "subtitle": "OpenRobotKit bugün ne sunuyor, bir donanım katmanının sırada nelere ihtiyacı var?",
+        "category": "Robotik",
+        "project": "openrobotkit",
+        "readingTime": "2 dk okuma",
+        "paragraphs": [
+          "OpenRobotKit iddialı bir yönle başlıyor: Python, Arduino ve ESP32 kullanan robotik projeler için yeniden kullanılabilir araçlar ve örnekler. Mevcut uygulama ise bu yol haritasından çok daha küçük. Çalıştırılabilir kaynak kodu; başlangıç hızına, set_speed metoduna ve stop metoduna sahip bir Python Motor sınıfından oluşuyor. Bu küçük başlangıç, bugün çizilmiş olan sınırı incelemeyi kolaylaştırıyor.",
+          "Şu anda hızı değiştirmek, bir Python niteliğini güncelliyor. stop çağrısı bu değeri sıfırlıyor. Sınıfta PWM çıkışı, seri mesaj, pin yapılandırması veya fiziksel bir kontrolcüye bağlantı bulunmuyor. Bunu doğru anlatmak önemli: motor durumunun yazılımdaki temsili yararlı bir temel olsa da henüz çalışan bir donanım sürücüsü değil. Depodaki daha geniş modül listesi, geliştirme yönü olarak okunmalı.",
+          "Sıradaki yararlı tasarım sorusu, bu arayüzün nerede bitmesi gerektiği. Gelecekteki bir sürücü, uygulamanın kullandığı API'yi küçük tutarak istenen hızı donanıma özgü komutlara dönüştürebilir. Bunun öncesinde arayüz sözleşmesinin birimleri, geçerli aralıkları, yönü, hata davranışını ve istenen değer ile gözlenen değer arasındaki farkı tanımlaması gerekir. Bunlar mevcut uygulamanın sağladığı yetenekler değil, tasarım soruları.",
+          "Aynı dikkat yol haritasının geri kalanı için de geçerli. PID kontrolü, sensör kalibrasyonu, Bluetooth, Wi-Fi, kamera desteği, OpenCV yardımcıları ve diğer modüller proje planında yer alıyor. Bunlar, ancak ilgili kod, örnek ve doğrulama mevcut olduğunda portföyde tamamlanmış özellikler olarak sunulmalı. Mevcut dokümantasyon ve testle ilişkili dizinler, gösterilmiş bir test kapsamı yerine yer tutucu dosyalar içeriyor.",
+          "Bu aşamada en yararlı hedef, küçük ama baştan sona tamamlanmış bir parça: belgelenmiş bir motor sözleşmesi, gerçek bir adaptör, çalıştırılabilir bir örnek ve yazılım davranışına yönelik testler. OpenRobotKit bu yolun erken bir araştırması. Açıklamayı kodun mevcut kapsamıyla orantılı tutmak, okuyucunun bugün gerçekten neyi çalıştırabileceğini belirsizleştirmeden projenin büyümesine alan açıyor."
+        ],
+        "sourceLabels": [
+          "Proje README dosyası ve yol haritası",
+          "Mevcut Motor uygulaması",
+          "Depodaki kaynak ağacı"
+        ]
+      },
+      {
+        "id": "one-portfolio-many-candidates",
+        "title": "Tek portföy, çok sayıda aday",
+        "subtitle": "Yerel bir araştırma simülatöründe ortak durum ve açık sınırlar neden gerekli?",
+        "category": "Simülasyon",
+        "project": "ai-trader-paper",
+        "readingTime": "2 dk okuma",
+        "paragraphs": [
+          "Bir araştırma betiği, birden çok sembolü bağımsız olarak puanlayıp yine de toplamda mümkün olmayan bir portföy üretebilir. Her aday tek başına karşılanabilir görünürken birlikte aynı nakit bakiyesini veya risk limitini aşabilir. AI Trader Paper bu sorunu, her piyasa ve seans için tek bir ortak sanal portföy kullanan, çevrimdışı çalışmayı temel alan bir Python prototipiyle araştırıyor.",
+          "İşlem akışı, girdi fiyat çubuklarından teknik özelliklere, küçük bir makine öğrenmesi modeline ve sezgisel puanlamaya ilerliyor. Maliyetleri dikkate alan pozisyon boyutlandırması ve ikinci bir maliyet kontrolü, emir niyetinden veya yerel gerçekleşmeden önce geliyor. Paper modunda semboller ortak bir motor üzerinde belirli bir sırayla değerlendiriliyor. Böylece önceki işlemler, sonraki adayların kullanabileceği nakdi ve portföy limitlerini etkiliyor. Bu sıra tekrarlanabilir; en iyi portföy seçiminin yapıldığı anlamına gelmiyor.",
+          "Portföy durumu; nakdi, pozisyonları ve sağlanan fiyatlarla hesaplanan toplam değeri kapsıyor. Örnek komisyonlar ve gerçekleşme etkisi simülasyonu değiştiriyor. Seans zarar sınırı aşıldığında da kısıt etkin kalıyor. Yeni girişler engellendikten sonra koruyucu çıkışlar kullanılabiliyor. Bu mekanizmalar varsayımları görünür kılıyor; ancak eşik yine de bir tetikleyici. Simüle edilen kaybın bu eşiği hiçbir zaman aşmayacağına dair bir garanti değil.",
+          "Dry-run modunun anlamı farklı. Bu mod, portföyü değiştirmeden veya sermaye ayırmadan bağımsız önerileri değerlendiriyor. Bu öneriler birlikte onaylanmış bir dağılım gibi ele alınmamalı. Çevrimdışı demo sentetik gözlemler ve sanal bakiyeler kullanıyor; bütün adayları reddedebilir. Ürettiği hareket tarihsel bir geriye dönük test değil. Model skoru da kalibre edilmiş bir başarı olasılığı değil.",
+          "0.1 sürümü bilinçli olarak tek seferlik, bellekte çalışan bir seansla sınırlı. Yeniden başlatmak yeni bir hesap oluşturuyor. Kalıcı günlük, borsa takvimi, sürekli pozisyon takibi veya aracı kurum adaptörü bulunmuyor. Stop işlemleri ancak yeni bir fiyat sağlandığında tepki veriyor. Kalıcı durum ve portföy düzeyinde örneklem dışı değerlendirme, belgelenmiş yol haritasında. Proje, bu kararları incelemek için şeffaf bir yazılım deneme ortamı sunuyor; kârlı getiriye ilişkin kanıt iddiasında bulunmuyor."
+        ],
+        "sourceLabels": [
+          "Proje README dosyası ve sınırlar",
+          "Tasarım ve sonraki adımlar",
+          "Paket bağımlılıkları"
+        ]
+      }
+    ]
+  },
+  "contacts": [
+    {
+      "type": "github",
+      "label": "GitHub",
+      "handle": "mehmetakifcakr",
+      "url": "https://github.com/mehmetakifcakr",
+      "source": "GitHub connector get_profile",
+      "recommended": true
+    },
+    {
+      "type": "linkedin",
+      "label": "LinkedIn",
+      "handle": "ma-cakr",
+      "url": "https://www.linkedin.com/in/ma-cakr/",
+      "source": "https://github.com/mehmetakifcakr/mehmetakifcakr/blob/main/README.md",
+      "recommended": true
+    },
+    {
+      "type": "instagram",
+      "label": "Instagram",
+      "handle": "@ma_cakr",
+      "url": "https://www.instagram.com/ma_cakr/",
+      "originalUrl": "https://www.instagram.com/ma_cakr?igsh=MWF5MnJkNTV0aWI1&utm_source=qr",
+      "source": "https://github.com/mehmetakifcakr/mehmetakifcakir.github.io/blob/main/index.html",
+      "recommended": true,
+      "note": "Canonical path preserves the exact account from the source; only QR tracking parameters were removed."
+    },
+    {
+      "type": "email",
+      "label": "Email",
+      "handle": "mehmetakifcakrr@gmail.com",
+      "url": "mailto:mehmetakifcakrr@gmail.com",
+      "source": "https://github.com/mehmetakifcakr/mehmetakifcakr/blob/main/README.md",
+      "recommended": true,
+      "note": "Current public profile README explicitly names this address for professional conversations."
+    },
+    {
+      "type": "orcid",
+      "label": "ORCID",
+      "handle": "0009-0008-9355-7559",
+      "url": "https://orcid.org/0009-0008-9355-7559",
+      "source": "https://github.com/mehmetakifcakr/mehmetakifcakr/blob/main/README.md",
+      "recommended": false
+    }
+  ]
+}
