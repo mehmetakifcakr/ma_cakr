@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://gray-pond-0fbfc1c10.3.azurestaticapps.net/sitemap.xml
+Sitemap: https://macakr.me/sitemap.xml

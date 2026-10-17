@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="glow"><stop stop-color="#153d64"/><stop offset="1" stop-color="#050b18"/></radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0v40" fill="none" stroke="#82b8df" stroke-opacity=".07"/></pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#050b18"/>
+  <rect x="500" width="700" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <g transform="translate(80 68)" fill="none"><rect width="58" height="58" rx="17" fill="#0b1930" stroke="#80d9f5" stroke-opacity=".4"/><path d="M14 36V22a3 3 0 0 1 5-2l10 10 10-10a3 3 0 0 1 5 2v14" stroke="#e7effa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 43h8" stroke="#80d9f5" stroke-width="3" stroke-linecap="round"/></g>
+  <text x="157" y="108" fill="#e7effa" font-family="Arial,sans-serif" font-size="33" font-weight="600">ma<tspan fill="#80d9f5">_</tspan>cakr.</text>
+  <text x="80" y="253" fill="#e7effa" font-family="Arial,sans-serif" font-size="88" font-weight="700" letter-spacing="-5">Curiosity.</text>
+  <text x="80" y="353" fill="#80d9f5" font-family="Arial,sans-serif" font-size="88" font-weight="700" letter-spacing="-5">Engineered.</text>
+  <text x="85" y="422" fill="#c3d1e3" font-family="Arial,sans-serif" font-size="26">Mehmet Akif Çakır</text>
+  <text x="85" y="460" fill="#9aadc7" font-family="Arial,sans-serif" font-size="19">Robotics · Embedded systems · Open source</text>
+  <g transform="translate(970 292)" fill="none" stroke="#80d9f5"><circle r="115" opacity=".15"/><circle r="80" opacity=".3" stroke-dasharray="2 9"/><circle r="40" opacity=".4"/><path d="M-145 0h290M0-145v290" opacity=".2"/><path d="M0 0 65-88" opacity=".8"/><circle cx="65" cy="-88" r="5" fill="#80d9f5"/><circle r="5" fill="#80d9f5"/></g>
+  <path d="M80 535h1040" stroke="#82b8df" stroke-opacity=".18"/>
+  <text x="83" y="578" fill="#9aadc7" font-family="monospace" font-size="17">A PERSONAL ENGINEERING NOTEBOOK</text>
+  <text x="985" y="578" fill="#80d9f5" font-family="monospace" font-size="19">macakr.me</text>
+</svg>

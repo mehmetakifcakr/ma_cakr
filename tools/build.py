@@ -55,7 +55,7 @@ def publication_head(lang, article_id=None):
  alternates = ''.join(f'<link rel="alternate" hreflang="{language}" href="{e(page_url(language, article_id))}">' for language in ['en', 'tr'])
  return (f'<meta name="robots" content="index, follow"><link rel="canonical" href="{e(page_url(lang, article_id))}">'
          + alternates + f'<link rel="alternate" hreflang="x-default" href="{e(page_url("en", article_id))}">'
-         + f'<meta property="og:url" content="{e(page_url(lang, article_id))}"><meta property="og:image" content="{e(SITE_BASE_URL)}/assets/portrait.jpg">')
+         + f'<meta property="og:url" content="{e(page_url(lang, article_id))}"><meta property="og:image" content="{e(SITE_BASE_URL)}/assets/social-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">')
 
 def build_discovery_files():
  if not SITE_BASE_URL:
@@ -71,7 +71,7 @@ def build_discovery_files():
 UI = {
 'en': {
  'role':'Mechatronics engineering student', 'work':'Projects', 'journal':'Journal', 'about':'About', 'contact':'Contact', 'cv':'My CV',
- 'intro':'An engineer’s curiosity. A maker’s mindset.', 'hero':'Between ideas<br>and <em>the real world.</em>',
+ 'intro':'An engineer’s curiosity. A maker’s mindset.', 'hero':'Curiosity.<br><em>Engineered.</em>',
  'intro_text':'I’m Mehmet Akif Çakır. I explore robotics, embedded systems and software — one thoughtful experiment at a time.',
  'explore':'Explore my projects', 'read':'Read the journal', 'portrait_caption':'Mehmet Akif Çakır', 'portrait_sub':'Mechatronics · code · curiosity',
  'location':'Based in Izmir, Türkiye', 'scroll':'A little further down', 'focus':'Robotics / Embedded systems / Software',
@@ -97,7 +97,7 @@ UI = {
  },
 'tr': {
  'role':'Mekatronik mühendisliği öğrencisi', 'work':'Projeler', 'journal':'Günlük', 'about':'Hakkımda', 'contact':'İletişim', 'cv':'Özgeçmişim',
- 'intro':'Mühendislik merakı. Üretme tutkusu.', 'hero':'Fikirlerden<br><em>gerçek dünyaya.</em>',
+ 'intro':'Mühendislik merakı. Üretme tutkusu.', 'hero':'Meraktan<br><em>üretime.</em>',
  'intro_text':'Ben Mehmet Akif Çakır. Robotik, gömülü sistemler ve yazılımı, her seferinde yeni bir deneyle keşfediyorum.',
  'explore':'Projelerimi keşfet', 'read':'Günlüğü oku', 'portrait_caption':'Mehmet Akif Çakır', 'portrait_sub':'Mekatronik · kod · merak',
  'location':'İzmir, Türkiye', 'scroll':'Biraz daha aşağıda', 'focus':'Robotik / Gömülü sistemler / Yazılım',
@@ -123,6 +123,21 @@ UI = {
  }
 }
 
+UI['en'].update({
+ 'portrait_label':'01 / The person behind the projects', 'profile_note':'Learning. Building. Sharing.',
+ 'project_count':'open-source projects', 'language_count':'languages, one notebook', 'local_time':'İstanbul time',
+ 'work_title':'Built to explore.<br><em>Open to inspect.</em>',
+ 'journal_title':'From the<br><em>engineering notebook.</em>',
+ 'about_title':'The person<br><em>behind the code.</em>',
+})
+UI['tr'].update({
+ 'portrait_label':'01 / Projelerin arkasındaki kişi', 'profile_note':'Öğren. Üret. Paylaş.',
+ 'project_count':'açık kaynak proje', 'language_count':'dil, tek mühendislik defteri', 'local_time':'İstanbul saati',
+ 'work_title':'Keşfetmek için.<br><em>Herkese açık.</em>',
+ 'journal_title':'Mühendislik<br><em>defterinden.</em>',
+ 'about_title':'Kodun<br><em>arkasındaki kişi.</em>',
+})
+
 ICON_PATHS = {
  'arrow':'<path d="M5 19 19 5M5 5h14v14"/>',
  'down':'<path d="M12 3v17m-6-6 6 6 6-6"/>',
@@ -141,21 +156,21 @@ def icon(name, cls=''):
  return f'<svg class="icon {cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{ICON_PATHS[name]}</svg>'
 
 def mark():
- return '<svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M6 37V11l18 18 18-18v26" stroke="currentColor" stroke-width="3.2" stroke-linejoin="miter"/><path class="mark-accent" d="m14 38 10-25 10 25M18 29h12" stroke="currentColor" stroke-width="2.4"/><path d="M5 44h38" stroke="currentColor" stroke-width="1" opacity=".35"/></svg>'
+ return '<svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="1" y="1" width="46" height="46" rx="14" stroke="currentColor" opacity=".35"/><path d="M12 30V18a2 2 0 0 1 3.4-1.4L24 25l8.6-8.4A2 2 0 0 1 36 18v12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path class="mark-accent" d="M21 35h7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>'
 
 def logo(label, href):
- return f'<a class="brand" href="{href}" aria-label="{label}">{mark()}<span>ma_cakr<span class="brand-dot">.</span></span></a>'
+ return f'<a class="brand" href="{href}" aria-label="{label}">{mark()}<span>ma<span class="brand-underscore">_</span>cakr<span class="brand-dot">.</span></span></a>'
 
 def artwork(project, variant='card'):
  # Native vector illustrations describe the project theme, rather than pretending to be screenshots.
  if project=='recovertick':
   paths=''.join(f'<path d="M{x} {y}h{w}"/>' for x,y,w in [(68,95,70),(68,114,102),(68,133,53),(231,178,82),(231,197,101),(231,216,62)])
-  body=f'<g stroke="#77899d" fill="none"><rect x="42" y="67" width="157" height="96" rx="8"/><rect x="208" y="150" width="158" height="96" rx="8"/>{paths}<path d="M199 114h42q16 0 16 16v20M208 197h-48q-16 0-16-16v-18" stroke-dasharray="4 5"/><circle cx="257" cy="130" r="5" fill="#b66b47" stroke="#b66b47"/><circle cx="144" cy="179" r="5" fill="#b66b47" stroke="#b66b47"/></g><text x="59" y="52" class="art-label">STATE → DECISION → REPLAY</text><text x="337" y="280" class="art-small">01</text>'
+  body=f'<g stroke="#667f9b" fill="none"><rect x="42" y="67" width="157" height="96" rx="8"/><rect x="208" y="150" width="158" height="96" rx="8"/>{paths}<path d="M199 114h42q16 0 16 16v20M208 197h-48q-16 0-16-16v-18" stroke-dasharray="4 5"/><circle cx="257" cy="130" r="5" fill="#80d9f5" stroke="#80d9f5"/><circle cx="144" cy="179" r="5" fill="#80d9f5" stroke="#80d9f5"/></g><text x="59" y="52" class="art-label">STATE → DECISION → REPLAY</text><text x="337" y="280" class="art-small">01</text>'
  elif project=='openrobotkit':
-  body='<g fill="none" stroke="#78869b"><circle cx="206" cy="151" r="84" stroke-dasharray="2 8"/><circle cx="206" cy="151" r="57"/><circle cx="206" cy="151" r="34"/><path d="M206 46v27m0 156v27M101 151h27m156 0h27M151 96l20 20m70 70 20 20M151 206l20-20m70-70 20-20"/><path d="M206 151 245 98" stroke="#b66b47" stroke-width="3"/><circle cx="206" cy="151" r="9" fill="#152a44"/></g><text x="35" y="42" class="art-label">A SMALL INTERFACE FOR MOTION</text><text x="337" y="280" class="art-small">02</text>'
+  body='<g fill="none" stroke="#667f9b"><circle cx="206" cy="151" r="84" stroke-dasharray="2 8"/><circle cx="206" cy="151" r="57"/><circle cx="206" cy="151" r="34"/><path d="M206 46v27m0 156v27M101 151h27m156 0h27M151 96l20 20m70 70 20 20M151 206l20-20m70-70 20-20"/><path d="M206 151 245 98" stroke="#80d9f5" stroke-width="3"/><circle cx="206" cy="151" r="9" fill="#7ea8ff"/></g><text x="35" y="42" class="art-label">A SMALL INTERFACE FOR MOTION</text><text x="337" y="280" class="art-small">02</text>'
  else:
-  body='<g stroke="#8692a0" fill="none"><path d="M48 231h310M48 61v170"/><path d="M48 156h310M48 95h310" stroke-dasharray="2 6" opacity=".5"/><path d="m55 204 35-20 30 8 30-46 30 12 28-31 30 16 36-46 31 9 39-41" stroke="#b66b47" stroke-width="2"/><path d="m55 216 35-12 30 3 30-19 30 9 28-18 30 8 36-21 31 9 39-14" stroke="#152a44" stroke-width="2"/><circle cx="274" cy="97" r="5" fill="#b66b47" stroke="none"/></g><text x="48" y="42" class="art-label">ONE ACCOUNT. EXPLICIT LIMITS.</text><text x="337" y="280" class="art-small">03</text>'
- return f'<svg class="project-art {variant}" viewBox="0 0 410 300" fill="none" aria-hidden="true"><defs><pattern id="grid-{project}-{variant}" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0v20" stroke="#152a44" stroke-width=".4" opacity=".12"/></pattern></defs><rect x="0" y="0" width="410" height="300" fill="url(#grid-{project}-{variant})"/>{body}</svg>'
+  body='<g stroke="#667f9b" fill="none"><path d="M48 231h310M48 61v170"/><path d="M48 156h310M48 95h310" stroke-dasharray="2 6" opacity=".5"/><path d="m55 204 35-20 30 8 30-46 30 12 28-31 30 16 36-46 31 9 39-41" stroke="#80d9f5" stroke-width="2"/><path d="m55 216 35-12 30 3 30-19 30 9 28-18 30 8 36-21 31 9 39-14" stroke="#7ea8ff" stroke-width="2"/><circle cx="274" cy="97" r="5" fill="#80d9f5" stroke="none"/></g><text x="48" y="42" class="art-label">ONE ACCOUNT. EXPLICIT LIMITS.</text><text x="337" y="280" class="art-small">03</text>'
+ return f'<svg class="project-art {variant}" viewBox="0 0 410 300" fill="none" aria-hidden="true"><defs><pattern id="grid-{project}-{variant}" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0v20" stroke="#7ea8ff" stroke-width=".4" opacity=".12"/></pattern></defs><rect x="0" y="0" width="410" height="300" fill="url(#grid-{project}-{variant})"/>{body}</svg>'
 
 def minutes(note):
  return max(1, math.ceil(len(' '.join(note['paragraphs']).split()) / 200))
@@ -199,10 +214,27 @@ def build(lang='en', article_id=None):
    label=u['email'] if c['type']=='email' else c['label']
    contacts+=f'<a class="contact-link magnetic" href="{c["url"]}" {"" if c["type"]=="email" else "target=\"_blank\" rel=\"noopener noreferrer\""}><span class="contact-icon">{icon(c["type"])}</span><span><span class="contact-label">{label}</span><span class="contact-handle">{e(c["handle"])}</span></span>{icon("arrow","contact-arrow")}</a>'
   content=f'''
-  <section class="hero wrap" aria-labelledby="hero-title"><div class="hero-copy"><div class="eyebrow"><span class="status-dot"></span>{u['role']}</div><h1 id="hero-title">{u['hero']}</h1><p class="hero-intro">{u['intro_text']}</p><div class="hero-actions"><a class="button button-primary magnetic" href="#work">{u['explore']}{icon('arrow')}</a><a class="button-text animated-link" href="#journal">{u['read']}{icon('arrow')}</a></div><div class="hero-socials">{social}<span class="social-line"></span><span class="hero-location">{u['location']}</span></div></div><figure class="portrait-frame"><div class="portrait-decor decor-one" aria-hidden="true"></div><div class="portrait-decor decor-two" aria-hidden="true"></div><div class="portrait-image"><img src="{a('portrait.jpg')}" width="460" height="460" alt="Mehmet Akif Çakır" fetchpriority="high"><span class="portrait-index" aria-hidden="true">M / A / Ç</span></div><figcaption><span>{u['portrait_caption']}<small>{u['portrait_sub']}</small></span><span class="portrait-cross" aria-hidden="true">+</span></figcaption><span class="portrait-side" aria-hidden="true">A WORK IN CONTINUOUS PROGRESS</span></figure><div class="hero-foot"><a href="#work">{icon('down')}{u['scroll']}</a><span>{u['focus']}</span></div></section>
+  <section class="hero wrap" aria-labelledby="hero-title">
+   <div class="hero-copy">
+    <div class="hero-badge"><span class="status-dot" aria-hidden="true"></span>{u['role']}</div>
+    <p class="hero-identity">MEHMET AKİF ÇAKIR <span aria-hidden="true">/</span> ma_cakr</p>
+    <h1 id="hero-title">{u['hero']}</h1>
+    <p class="hero-intro">{u['intro_text']}</p>
+    <div class="hero-specialties"><span>{'Robotics' if lang=='en' else 'Robotik'}</span><span>{'Embedded systems' if lang=='en' else 'Gömülü sistemler'}</span><span>{'Open source' if lang=='en' else 'Açık kaynak'}</span></div>
+    <div class="hero-actions"><a class="button button-primary magnetic" href="#work">{u['explore']}{icon('arrow')}</a><a class="button-text animated-link" href="#contact">{u['contact']}{icon('arrow')}</a></div>
+    <div class="hero-socials">{social}<span class="social-line" aria-hidden="true"></span><span class="hero-location">{u['location']}</span></div>
+   </div>
+   <figure class="portrait-frame">
+    <div class="portrait-topline"><span>{u['portrait_label']}</span><span aria-hidden="true">↗</span></div>
+    <div class="portrait-image"><img src="{a('portrait.jpg')}" width="460" height="460" alt="Mehmet Akif Çakır" fetchpriority="high"><span class="portrait-index" aria-hidden="true">m_</span><svg class="portrait-corners" viewBox="0 0 460 460" fill="none" aria-hidden="true"><path d="M18 55V18h37m350 0h37v37M18 405v37h37m350 0h37v-37" stroke="currentColor" stroke-width="1.5"/></svg></div>
+    <figcaption><span>{u['portrait_caption']}<small>{u['portrait_sub']}</small></span><span class="portrait-cross" aria-hidden="true">+</span></figcaption>
+    <div class="portrait-coordinates"><span>{u['profile_note']}</span><span aria-hidden="true">&lt; / &gt;</span></div>
+   </figure>
+   <div class="hero-foot"><div class="hero-foot-stat"><strong>{len(projects):02}</strong><span>{u['project_count']}</span></div><div class="hero-foot-stat"><strong>EN / TR</strong><span>{u['language_count']}</span></div><div class="hero-foot-stat"><strong class="clock" data-clock>UTC+03:00</strong><span>{u['local_time']}</span></div><a href="#work">{u['scroll']}{icon('down')}</a></div>
+  </section>
   <section class="projects wrap section" id="work" aria-labelledby="work-title"><div class="section-heading reveal"><div><p class="eyebrow">{u['work_kicker']}</p><h2 id="work-title">{u['work_title']}</h2></div><p class="section-intro">{u['work_intro']}</p></div><div class="projects-grid">{cards}</div></section>
   <section class="journal-section" id="journal" aria-labelledby="journal-title"><div class="wrap section"><div class="section-heading reveal"><div><p class="eyebrow">{u['journal_kicker']}</p><h2 id="journal-title">{u['journal_title']}</h2></div><p class="section-intro">{u['journal_intro']}</p></div><div class="journal-tools"><label class="search-field" for="note-search">{icon('search')}<span class="sr-only">{u['search']}</span><input type="search" id="note-search" placeholder="{u['search_placeholder']}" autocomplete="off"><button class="clear-search" type="button" aria-label="{u['clear']}" hidden>×</button></label><span class="result-count" aria-live="polite" aria-atomic="true" data-unit="{u['results']}">3 {u['results']}</span></div><div class="topic-filters" role="group" aria-label="{u['search_label']}">{filters}</div><div class="notes-list">{note_cards}</div><p class="no-results" hidden>{u['no_results']}</p></div></section>
-  <section class="about-section wrap section" id="about" aria-labelledby="about-title"><div class="about-portrait reveal"><div class="about-monogram" aria-hidden="true">{mark()}</div><p class="eyebrow">{u['location']}</p><h3>Mehmet Akif<br>Çakır<span>.</span></h3><p class="about-role">{u['role']}</p><a class="animated-link" href="https://orcid.org/0009-0008-9355-7559" target="_blank" rel="noopener noreferrer">{u['academic']}{icon('arrow')}</a></div><div class="about-copy"><p class="eyebrow reveal">{u['about_kicker']}</p><h2 id="about-title" class="reveal">{u['about_title']}</h2><p class="bio-text reveal">{e(bio['long'])}</p><div class="about-details reveal"><div><h3>{u['education']}</h3><p>{u['university']}<br><span>{u['degree']}</span></p></div><div><h3>{u['toolbox']}</h3><p>Python · Rust · C++<br><span>Git · Arduino · ESP32</span></p></div></div></div></section>
+  <section class="about-section wrap section" id="about" aria-labelledby="about-title"><div class="about-portrait reveal"><div class="about-monogram" aria-hidden="true">{mark()}</div><p class="eyebrow">{u['location']}</p><h3>Mehmet Akif<br>Çakır<span>.</span></h3><p class="about-role">{u['role']}</p><a class="animated-link" href="https://orcid.org/0009-0008-9355-7559" target="_blank" rel="noopener noreferrer">{u['academic']}{icon('arrow')}</a></div><div class="about-copy"><p class="eyebrow reveal">{u['about_kicker']}</p><h2 id="about-title" class="reveal">{u['about_title']}</h2><p class="bio-text reveal">{e(bio['long'])}</p><div class="about-details reveal"><div><h3>{u['education']}</h3><a class="education-badge" href="https://www.mcbu.edu.tr/" target="_blank" rel="noopener noreferrer"><img class="university-logo" src="{a('mcbu-official.png')}" width="78" height="96" alt="Manisa Celal Bayar Üniversitesi" loading="lazy"><span class="education-copy">{u['university']}<small>{u['degree']}</small></span></a></div><div><h3>{u['toolbox']}</h3><p>Python · Rust · C++<br><span>Git · Arduino · ESP32</span></p></div></div></div></section>
   <section class="cv-section wrap" id="cv"><div class="cv-strip reveal"><div class="cv-symbol" aria-hidden="true">{icon('download')}</div><div><h2>{u['cv_title']}</h2><p>{u['cv_text']}</p></div><div class="cv-actions"><a class="animated-link" href="{a(cvfile)}" target="_blank" rel="noopener">{u['view_cv']}{icon('arrow')}</a><a class="button button-outline magnetic" href="{a(cvfile)}" download="{cvfile}">{u['download_cv']}{icon('download')}</a></div></div></section>
   <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="wrap section"><p class="eyebrow reveal">{u['contact_kicker']}</p><div class="contact-heading reveal"><h2 id="contact-title">{u['contact_title']}</h2><p>{u['contact_intro']}</p></div><div class="contact-grid">{contacts}</div></div></section>
   '''
@@ -215,7 +247,7 @@ def build(lang='en', article_id=None):
   content=f'''<article class="article-page wrap"><a class="article-back animated-link" href="{home}#journal">{icon('arrow')}{u['back']}</a><header class="article-header"><p class="eyebrow">{u['note_label']} <span>/</span> {e(n['category'])}</p><h1>{e(n['title'])}</h1><p class="article-subtitle">{e(n['subtitle'])}</p><div class="article-byline"><img src="{a('portrait.jpg')}" alt="" width="42" height="42"><span>Mehmet Akif Çakır<small>{u['author_role']}</small></span><span class="article-time">{minutes(n)} {u['read_time']}</span></div></header><div class="article-layout"><aside class="article-sidebar"><span class="eyebrow">{u['source_repository']}</span><a class="animated-link" href="{p['repository']}" target="_blank" rel="noopener noreferrer">{e(p['title'])}{icon('arrow')}</a><span class="article-stage">{e(p['stage'])}</span></aside><div class="article-body"><figure class="article-illustration">{artwork(p['id'],'article')}</figure><div class="article-paragraphs">{paragraphs}</div><div class="article-source-note">{u['source_note']}</div><section class="article-sources"><h2>{u['sources']}</h2><ul>{sources}</ul></section></div></div><section class="related-notes"><p class="eyebrow">{u['related']}</p><div>{related}</div></section></article>'''
  metadata=json.dumps({'@context':'https://schema.org','@type':'Person','name':'Mehmet Akif Çakır','alternateName':'ma_cakr','jobTitle':u['role'],'image':D['github']['avatarUrl'],'sameAs':[c['url'] for c in D['contacts'] if c['type'] in ['github','linkedin','instagram']]},ensure_ascii=False)
  html=f'''<!doctype html>
-<html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f1e9">{publication_head(lang, article_id)}<title>{e(title)}</title><meta name="description" content="{e(desc)}"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:type" content="{'article' if article_id else 'website'}"><meta property="og:locale" content="{'tr_TR' if lang=='tr' else 'en_US'}"><link rel="icon" href="{a('brand-mark.svg')}" type="image/svg+xml"><link rel="stylesheet" href="{rel}styles.css"><script src="{rel}app.js" defer></script><script type="application/ld+json">{metadata}</script></head><body id="top" data-lang="{lang}"><a class="skip-link" href="#main">{u['skip']}</a><canvas id="ambient-trail" aria-hidden="true"></canvas>{header}<main id="main">{content}</main>{footer}{motion}</body></html>'''
+<html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#050b18">{publication_head(lang, article_id)}<title>{e(title)}</title><meta name="description" content="{e(desc)}"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:type" content="{'article' if article_id else 'website'}"><meta property="og:locale" content="{'tr_TR' if lang=='tr' else 'en_US'}"><link rel="icon" href="{a('brand-mark.svg')}" type="image/svg+xml"><link rel="stylesheet" href="{rel}styles.css"><script src="{rel}app.js" defer></script><script type="application/ld+json">{metadata}</script></head><body id="top" data-lang="{lang}"><a class="skip-link" href="#main">{u['skip']}</a><div class="scroll-progress" aria-hidden="true"></div><div class="pointer-glow" aria-hidden="true"></div><canvas id="ambient-trail" aria-hidden="true"></canvas>{header}<main id="main">{content}</main>{footer}{motion}</body></html>'''
  path=OUT/current
  path.parent.mkdir(parents=True,exist_ok=True)
  path.write_text(html)
@@ -225,8 +257,8 @@ for lang in ['en','tr']:
  for note in D['journal']:build(lang,note['id'])
 build_discovery_files()
 
-mark_svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#f5f1e9"/><g fill="none" stroke-linecap="square"><path d="M10 47V13l22 22 22-22v34" stroke="#152a44" stroke-width="4"/><path d="m19 48 13-32 13 32M24 37h16" stroke="#ad5c3a" stroke-width="3"/></g></svg>'
+mark_svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="18" fill="#0b1930"/><path d="M16 40V24a3 3 0 0 1 5-2l11 11 11-11a3 3 0 0 1 5 2v16" fill="none" stroke="#e7effa" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 47h9" stroke="#80d9f5" stroke-width="3.6" stroke-linecap="round"/></svg>'
 (OUT/'assets/brand-mark.svg').write_text(mark_svg)
 (OUT/'favicon.svg').write_text(mark_svg)
-(OUT/'assets/ma-cakr-logo.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 78"><rect width="330" height="78" fill="#f5f1e9"/><g transform="translate(10 7)" fill="none"><path d="M10 47V13l22 22 22-22v34" stroke="#152a44" stroke-width="4"/><path d="m19 48 13-32 13 32M24 37h16" stroke="#ad5c3a" stroke-width="3"/></g><text x="90" y="50" fill="#152a44" font-family="Arial,sans-serif" font-size="39" font-weight="600" letter-spacing="-2">ma_cakr<tspan fill="#ad5c3a">.</tspan></text></svg>')
+(OUT/'assets/ma-cakr-logo.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 78"><g transform="translate(4 7)"><rect width="64" height="64" rx="18" fill="#0b1930"/><path d="M16 40V24a3 3 0 0 1 5-2l11 11 11-11a3 3 0 0 1 5 2v16" fill="none" stroke="#e7effa" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 47h9" stroke="#80d9f5" stroke-width="3.6" stroke-linecap="round"/></g><text x="86" y="50" fill="#e7effa" font-family="Arial,sans-serif" font-size="39" font-weight="600" letter-spacing="-2">ma<tspan fill="#80d9f5">_</tspan>cakr<tspan fill="#80d9f5">.</tspan></text></svg>')
 print('Generated 2 homepages, 6 articles, and SVG brand assets.')

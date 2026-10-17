@@ -29,7 +29,7 @@ jobs:
           lfs: false
       - name: Generate public pages and prepare deployment
         env:
-          SITE_BASE_URL: https://gray-pond-0fbfc1c10.3.azurestaticapps.net
+          SITE_BASE_URL: https://macakr.me
         run: |
           test -n "$SITE_BASE_URL"
           python3 tools/build.py

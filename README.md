@@ -1,6 +1,6 @@
 # ma_cakr — portfolio & engineering journal
 
-A bilingual personal site for Mehmet Akif Çakır, a mechatronics engineering student at Manisa Celal Bayar University. The design uses warm paper, navy and copper, a custom geometric brand mark, and the owner's GitHub portrait.
+A bilingual personal site for Mehmet Akif Çakır, a mechatronics engineering student at Manisa Celal Bayar University. The redesign uses deep navy, cool blue and cyan, a soft `ma_cakr` monogram, the owner's existing portrait and the official university logo. This is the original Azure site's source, not the separate Next.js draft in the parent directory.
 
 ## Site
 
@@ -9,7 +9,7 @@ A bilingual personal site for Mehmet Akif Çakır, a mechatronics engineering st
 - Journal search, combinable topic filters, computed reading times and a no-results state.
 - GitHub, LinkedIn, Instagram and the professional email from the current public profile README.
 - View/download links for one-page English and Turkish PDF CVs.
-- Pointer trails, responsive icon/button effects, scroll reveals and a persistent session pause control. System reduced-motion settings are respected.
+- A pointer-responsive ambient network, card illumination, restrained magnetic controls, scroll progress, section navigation and an actual İstanbul clock. Motion preferences persist and respect the system's reduced-motion setting; constrained devices use lighter effects.
 - Static HTML/CSS/JavaScript. No build dependencies, accounts, database or analytics are required.
 
 ## Edit the journal
@@ -26,13 +26,15 @@ Preview the repository with any static HTTP server. Paths work from a custom dom
 
 ## Publication status
 
-Live site: [ma_cakr](https://gray-pond-0fbfc1c10.3.azurestaticapps.net/), hosted on Azure Static Web Apps **Free**. The connected deployment branch is `codex/ma-cakr-editorial`. A push to that branch regenerates the eight English/Turkish pages and deploys only the public files; editing `content/site.json` is enough to update content through this workflow.
+Existing live site: [macakr.me](https://macakr.me/), hosted on the original Azure Static Web App, `ma-cakr`. Its Azure hostname is `gray-pond-0fbfc1c10.3.azurestaticapps.net`. The connected production branch is `codex/ma-cakr-editorial`, not `main`. A push to that branch regenerates the eight English/Turkish pages and deploys only the public files.
+
+The navy redesign is prepared separately on `codex/macakr-navy-redesign`. It has not been pushed or deployed. Review its local preview before approving a production update. Keep the existing Azure app and domain; no hosting migration, DNS, credentials, billing or resource changes are part of this redesign.
 
 With `SITE_BASE_URL` unset or empty, `python3 tools/build.py` produces a local review draft with `noindex, nofollow` and removes previously generated discovery files. For a release, supply the actual public HTTPS base URL. A safe deployment subdirectory is supported; ports, credentials, query strings, fragments, local addresses and placeholder hosts are rejected before output is written.
 
-The Azure workflow supplies `https://gray-pond-0fbfc1c10.3.azurestaticapps.net` and generates canonical URLs, reciprocal English/Turkish language metadata, social-preview URLs, `robots.txt` and the eight-page `sitemap.xml`. It then packages the public pages, assets and headers into `_site/` and deploys without a framework build. Deployment credentials are stored as a GitHub Actions secret; never put a token in source files.
+The Azure workflow's public URL is corrected to `https://macakr.me`, generating canonical URLs, reciprocal English/Turkish language metadata, social-preview URLs, `robots.txt` and the eight-page `sitemap.xml` for the owned domain. Existing triggers, deployment paths and the Azure app stay unchanged. It packages the public pages, assets and headers into `_site/` and deploys without a framework build. Deployment credentials remain in the existing GitHub Actions secret; never put a token in source files.
 
-No custom domain has been registered or connected. The prior `www.macakr.com` CNAME is excluded because domain control has not been established. Register and verify ownership before adding a custom domain.
+On 18 October 2026, a read-only request to `https://macakr.me/` returned exactly the original checkout's 32,819-byte HTML. The domain connection is already working. The prior `www.macakr.com` address remains excluded.
 
 ## Hosting and domain benefits
 
@@ -44,7 +46,9 @@ The Student Developer Pack currently lists first-year domain offers through Name
 
 ## Assets and sources
 
-The profile photo is from the authenticated GitHub profile. Brand marks and project illustrations are SVGs authored for this site. Google Fonts (DM Sans and Instrument Serif) are optional remote resources with system font fallbacks. The CVs use verified student and project information; no employment, graduation date, language level or award has been invented.
+The profile photo and CV PDFs are preserved from the original site. Brand marks, the share image and project illustrations are authored SVG assets. The interface uses system sans and monospace fonts without a remote font request. The CVs use the existing verified student and project information; no employment, graduation date, language level or award has been added.
+
+The university logo is the unmodified official PNG from the [MCBÜ press materials](https://basin.mcbu.edu.tr/hakkimizda/basin-materyalleri.70201.tr.html), displayed with its original colors and proportions on a light inset. University branding is used to identify education, not to imply an endorsement.
 
 - [GitHub Student Developer Pack](https://education.github.com/pack)
 - [Azure for Students](https://azure.microsoft.com/en-us/free/students/)
