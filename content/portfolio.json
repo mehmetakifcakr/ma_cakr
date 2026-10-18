@@ -1,0 +1,1204 @@
+{
+  "personal": {
+    "name": "Mehmet Akif ÇAKIR",
+    "domain": "macakr.me",
+    "github": "https://github.com/mehmetakifcakr",
+    "linkedin": "https://www.linkedin.com/in/ma-cakr/",
+    "emails": ["mehmetakifcakir525@gmail.com", "mehmetakifcakrr@gmail.com"],
+    "title": {
+      "en": "Mechatronics engineering student",
+      "tr": "Mekatronik mühendisliği öğrencisi"
+    },
+    "full_title": {
+      "en": "Embedded systems, robotics, open-source software & 3D fabrication",
+      "tr": "Gömülü sistemler, robotik, açık kaynak yazılım ve 3B üretim"
+    },
+    "status": {
+      "en": "Building RecoverTick & OpenRobotKit",
+      "tr": "RecoverTick ve OpenRobotKit geliştiriyorum"
+    },
+    "bio": {
+      "en": "I’m a third-year Mechatronics Engineering student at Manisa Celal Bayar University and an AI-Assisted Coding student at Anadolu University. I connect a hands-on electronics technician background with embedded systems, autonomous robotics, CT-based 3D biomedical modeling and generative AI workflows.",
+      "tr": "Manisa Celal Bayar Üniversitesi Mekatronik Mühendisliği 3. sınıf ve Anadolu Üniversitesi Yapay Zeka Destekli Kodlama öğrencisiyim. Elektrik-elektronik teknisyenliği kökenimi gömülü sistemler, otonom robotik, BT verilerinden 3B biyomedikal modelleme ve üretken yapay zeka iş akışlarıyla birleştiriyorum."
+    },
+    "university_location": "Turgutlu, Manisa",
+    "hometown_location": "Altınordu, Ordu"
+  },
+  "categories": [
+    {
+      "id": "open-source",
+      "label": {
+        "en": "Open Source & Rust",
+        "tr": "Açık Kaynak ve Rust"
+      }
+    },
+    {
+      "id": "robotics",
+      "label": {
+        "en": "Robotics & Embedded",
+        "tr": "Robotik ve Gömülü Sistemler"
+      }
+    },
+    {
+      "id": "fabrication",
+      "label": {
+        "en": "3D CAD & Biomedical",
+        "tr": "3B CAD ve Biyomedikal"
+      }
+    },
+    {
+      "id": "engineering",
+      "label": {
+        "en": "Engineering & Competition",
+        "tr": "Mühendislik ve Yarışma"
+      }
+    },
+    {
+      "id": "simulation",
+      "label": {
+        "en": "Simulation",
+        "tr": "Simülasyon"
+      }
+    }
+  ],
+  "projects": [
+    {
+      "id": "recovertick",
+      "title": {
+        "en": "RecoverTick v0.1.0",
+        "tr": "RecoverTick v0.1.0"
+      },
+      "category": "open-source",
+      "featured": true,
+      "date": "2026-10",
+      "stage": {
+        "en": "0.1.0 MVP",
+        "tr": "0.1.0 MVP"
+      },
+      "summary": {
+        "en": "Deterministic decisions. Bounded recovery. Inspectable replay.",
+        "tr": "Deterministik kararlar. Sınırlı yeniden deneme. İncelenebilir tekrar yürütme."
+      },
+      "description": {
+        "en": "A zero-dependency Rust decision engine with typed state, logical ticks, bounded retries and a fixed-capacity journal. Semantic replay verifies decisions from a known initial state. Published on GitHub and crates.io, with GitHub Actions CI.",
+        "tr": "Türlenmiş durum, mantıksal tick, sınırlı yeniden deneme ve sabit kapasiteli günlük içeren sıfır bağımlılıklı Rust karar motoru. Semantik replay, kararları bilinen bir başlangıç durumundan doğrular. GitHub Actions CI ile GitHub ve crates.io üzerinde yayınlandı."
+      },
+      "tech": ["Rust", "no_std", "Zero dependencies", "GitHub Actions CI"],
+      "github": "https://github.com/mehmetakifcakr/recovertick",
+      "crates": "https://crates.io/crates/recovertick",
+      "article": "replaying-a-controller-decision",
+      "limitation": {
+        "en": "Decision recovery is separate from actuator I/O. Hardware recovery, durable logging, safety certification and MCU timing guarantees are not claimed.",
+        "tr": "Karar kurtarma, aktüatör giriş/çıkışından ayrıdır. Donanım kurtarma, kalıcı kayıt, güvenlik sertifikasyonu veya MCU zamanlama garantisi iddia edilmez."
+      }
+    },
+    {
+      "id": "openrobotkit",
+      "title": {
+        "en": "OpenRobotKit",
+        "tr": "OpenRobotKit"
+      },
+      "category": "open-source",
+      "featured": true,
+      "date": "2026-07",
+      "stage": {
+        "en": "Early development",
+        "tr": "Erken geliştirme"
+      },
+      "summary": {
+        "en": "A small starting point for modular robotics hardware and software.",
+        "tr": "Modüler robotik donanım ve yazılım için küçük bir başlangıç."
+      },
+      "description": {
+        "en": "An open-source robotics initiative beginning with a Python motor abstraction. Configurable speed, set_speed and stop currently operate on software state; Arduino, ESP32, sensors and broader modules are roadmap items.",
+        "tr": "Python motor soyutlamasıyla başlayan açık kaynak robotik girişimi. Yapılandırılabilir hız, set_speed ve stop şu anda yazılım durumu üzerinde çalışır; Arduino, ESP32, sensörler ve daha geniş modüller yol haritasındadır."
+      },
+      "tech": ["Python", "Robotics", "Motor abstraction", "Open source"],
+      "github": "https://github.com/mehmetakifcakr/OpenRobotKit",
+      "article": "a-small-interface-for-motion",
+      "limitation": {
+        "en": "The current class has no pin configuration, PWM output, serial adapter or hardware acknowledgement. Broader hardware support remains planned.",
+        "tr": "Mevcut sınıfta pin yapılandırması, PWM çıkışı, seri adaptör veya donanım onayı yoktur. Daha geniş donanım desteği planlanmaktadır."
+      }
+    },
+    {
+      "id": "autonomous-egg-robot",
+      "title": {
+        "en": "Autonomous Egg Collection Robot",
+        "tr": "Otonom Yumurta Toplama Robotu"
+      },
+      "category": "robotics",
+      "featured": true,
+      "date": "2025",
+      "stage": {
+        "en": "TEKNOFEST project",
+        "tr": "TEKNOFEST projesi"
+      },
+      "summary": {
+        "en": "Sensing, navigation and a careful grip — an autonomous collection system.",
+        "tr": "Algılama, navigasyon ve hassas kavrama: otonom toplama sistemi."
+      },
+      "description": {
+        "en": "A TEKNOFEST robotic system using sensor-based autonomous navigation and egg detection. EEPROM state management and servo gripping connect the sensing and collection stages.",
+        "tr": "Sensör tabanlı otonom navigasyon ve yumurta algılama içeren TEKNOFEST robotik sistemi. EEPROM durum yönetimi ve servo kavrama, algılama ve toplama aşamalarını birleştirir."
+      },
+      "tech": ["Arduino Nano", "Embedded C/C++", "Servo & DC motors", "Sensors", "EEPROM"]
+    },
+    {
+      "id": "traffic-priority-system",
+      "title": {
+        "en": "Smart Lifeguard",
+        "tr": "Smart Lifeguard"
+      },
+      "category": "robotics",
+      "featured": true,
+      "date": "2024",
+      "stage": {
+        "en": "TEKNOFEST prototype",
+        "tr": "TEKNOFEST prototipi"
+      },
+      "summary": {
+        "en": "A traffic priority prototype for emergency vehicles.",
+        "tr": "Acil durum araçlarına geçiş önceliği veren trafik prototipi."
+      },
+      "description": {
+        "en": "An intelligent traffic signaling prototype that uses RF communication and sensors to dynamically control intersection lights for ambulances and emergency vehicles.",
+        "tr": "Ambulans ve acil durum araçları için RF haberleşmesi ve sensörlerle kavşak ışıklarını dinamik olarak kontrol eden akıllı trafik sinyalizasyon prototipi."
+      },
+      "tech": ["RF communication", "IoT", "Embedded C/C++", "Sensors", "Hardware prototyping"]
+    },
+    {
+      "id": "biomedical-shoulder-3d",
+      "title": {
+        "en": "CT-to-3D Shoulder Model",
+        "tr": "BT’den 3B Omuz Modeli"
+      },
+      "category": "fabrication",
+      "featured": true,
+      "date": "2026-09",
+      "stage": {
+        "en": "Educational model",
+        "tr": "Eğitim modeli"
+      },
+      "summary": {
+        "en": "Anatomy translated from CT data into a physical learning model.",
+        "tr": "BT verisinden fiziksel bir eğitim modeline dönüşen anatomi."
+      },
+      "description": {
+        "en": "A 3D-printed anatomical shoulder joint model for education, separating skeletal, muscle and ligament structures from CT scan data.",
+        "tr": "BT verilerinden kemik, kas ve bağ yapılarını ayrıştırarak eğitim amacıyla üretilen 3B baskı anatomik omuz eklemi modeli."
+      },
+      "tech": ["CT segmentation", "3D printing", "SolidWorks", "Biomedical modeling"]
+    },
+    {
+      "id": "tennis-ball-robot",
+      "title": {
+        "en": "Autonomous Tennis Ball Robot",
+        "tr": "Otonom Tenis Topu Toplama Robotu"
+      },
+      "category": "robotics",
+      "featured": false,
+      "date": "2025",
+      "stage": {
+        "en": "Robotics project",
+        "tr": "Robotik projesi"
+      },
+      "summary": {
+        "en": "An autonomous mobile robot for finding and collecting tennis balls.",
+        "tr": "Tenis toplarını algılayıp toplamak için otonom mobil robot."
+      },
+      "description": {
+        "en": "A mechatronic mobile robot designed to detect tennis balls on a court, follow an autonomous route and collect them through a motor-driven mechanism.",
+        "tr": "Sahadaki tenis toplarını algılamak, otonom rota izlemek ve motorlu mekanizmayla toplamak için tasarlanan mekatronik mobil robot."
+      },
+      "tech": ["Mechatronics", "Autonomous navigation", "Sensors", "DC & servo motors"]
+    },
+    {
+      "id": "biomimetic-robot-arm",
+      "title": {
+        "en": "Biomimetic Robot Arm",
+        "tr": "Biyotasarım Robot Kol"
+      },
+      "category": "fabrication",
+      "featured": false,
+      "date": "2025",
+      "stage": {
+        "en": "Mechanical prototype",
+        "tr": "Mekanik prototip"
+      },
+      "summary": {
+        "en": "Biological joints and tendon mechanisms, explored through CAD.",
+        "tr": "Biyolojik eklem ve tendon mekanizmalarını CAD ile keşfetmek."
+      },
+      "description": {
+        "en": "A robotic arm prototype modeled in 3D CAD and fabricated with 3D printing, inspired by biological joint and tendon mechanisms.",
+        "tr": "Biyolojik eklem ve tendon mekanizmalarından ilham alınarak 3B CAD ile modellenen ve 3B yazıcıyla üretilen robot kol prototipi."
+      },
+      "tech": ["SolidWorks", "Biomimicry", "3D printing", "Kinematics"]
+    },
+    {
+      "id": "high-altitude-rocket",
+      "title": {
+        "en": "High-Altitude Rocket Design",
+        "tr": "Yüksek İrtifa Roket Tasarımı"
+      },
+      "category": "engineering",
+      "featured": false,
+      "date": "2025",
+      "stage": {
+        "en": "Engineering design",
+        "tr": "Mühendislik tasarımı"
+      },
+      "summary": {
+        "en": "A systems view of an airframe, avionics bay and recovery mechanism.",
+        "tr": "Gövde, aviyonik bölümü ve kurtarma mekanizmasına sistem yaklaşımı."
+      },
+      "description": {
+        "en": "High-altitude rocket engineering design focused on aerodynamic stability, structural strength, avionics bay layout and the mechanics of recovery.",
+        "tr": "Aerodinamik kararlılık, gövde mukavemeti, aviyonik sistem yerleşimi ve kurtarma mekanizmasına odaklanan yüksek irtifa roket tasarımı."
+      },
+      "tech": ["CAD", "Aerodynamics", "Avionics", "Structural design"]
+    },
+    {
+      "id": "ai-trader-paper",
+      "title": {
+        "en": "AI Trader Paper",
+        "tr": "AI Trader Paper"
+      },
+      "category": "simulation",
+      "featured": false,
+      "date": "",
+      "stage": {
+        "en": "Alpha · local simulation",
+        "tr": "Alfa · yerel simülasyon"
+      },
+      "summary": {
+        "en": "A transparent sandbox for studying decisions and portfolio state.",
+        "tr": "Kararları ve portföy durumunu incelemek için şeffaf bir deney alanı."
+      },
+      "description": {
+        "en": "An offline-first Python research simulator with technical features, a small ML model and a shared fictional portfolio. Includes synthetic demos, dry-run intent evaluation and sequential local paper fills.",
+        "tr": "Teknik özellikler, küçük bir makine öğrenmesi modeli ve ortak kurgusal portföy içeren çevrimdışı öncelikli Python araştırma simülatörü. Sentetik demo, kuru çalıştırma niyet değerlendirmesi ve sıralı yerel simülasyon işlemleri içerir."
+      },
+      "tech": ["Python", "NumPy", "pandas", "scikit-learn"],
+      "github": "https://github.com/mehmetakifcakr/ai-trader-paper",
+      "article": "one-portfolio-many-candidates",
+      "limitation": {
+        "en": "An in-memory local simulator, with no broker connection, live order adapter, persistent account or validated portfolio backtest. Model scores do not establish profitability.",
+        "tr": "Bellekte çalışan yerel bir simülatördür; broker bağlantısı, canlı emir adaptörü, kalıcı hesap veya doğrulanmış portföy backtest’i içermez. Model skorları kârlılık kanıtı değildir."
+      }
+    }
+  ],
+  "education": [
+    {
+      "institution": {
+        "en": "Manisa Celal Bayar University",
+        "tr": "Manisa Celal Bayar Üniversitesi"
+      },
+      "faculty": {
+        "en": "Hasan Ferdi Turgutlu Faculty of Technology",
+        "tr": "Hasan Ferdi Turgutlu Teknoloji Fakültesi"
+      },
+      "degree": {
+        "en": "B.Sc. in Mechatronics Engineering · Third year",
+        "tr": "Mekatronik Mühendisliği · Lisans, 3. sınıf"
+      },
+      "period": {
+        "en": "September 2024 — Present",
+        "tr": "Eylül 2024 — Günümüz"
+      },
+      "details": {
+        "en": "Embedded systems, autonomous robotics, 3D CAD design and AI applications.",
+        "tr": "Gömülü sistemler, otonom robotik, 3B CAD tasarım ve yapay zeka uygulamaları."
+      }
+    },
+    {
+      "institution": {
+        "en": "Anadolu University",
+        "tr": "Anadolu Üniversitesi"
+      },
+      "faculty": {
+        "en": "Open Education Faculty · Second university",
+        "tr": "Açıköğretim Fakültesi · İkinci üniversite"
+      },
+      "degree": {
+        "en": "Associate degree in AI-Assisted Coding",
+        "tr": "Yapay Zeka Destekli Kodlama · Önlisans"
+      },
+      "period": {
+        "en": "August 2026 — Present",
+        "tr": "Ağustos 2026 — Günümüz"
+      },
+      "details": {
+        "en": "Software development, AI-assisted engineering workflows and automation. A Management Information Systems degree at İstanbul University AUZEF is a future study goal.",
+        "tr": "Yazılım geliştirme, yapay zeka destekli mühendislik iş akışları ve otomasyon. İÜ AUZEF Yönetim Bilişim Sistemleri lisansı, 4. sınıf için bir eğitim hedefidir."
+      }
+    },
+    {
+      "institution": {
+        "en": "Ordu Teknokent College",
+        "tr": "Ordu Teknokent Koleji"
+      },
+      "faculty": {
+        "en": "Vocational and Technical Anatolian High School",
+        "tr": "Mesleki ve Teknik Anadolu Lisesi"
+      },
+      "degree": {
+        "en": "Electrical & Electronics Technician Diploma and Mastery",
+        "tr": "Elektrik-Elektronik Teknisyenliği ve Ustalık"
+      },
+      "period": {
+        "en": "September 2019 — June 2023",
+        "tr": "Eylül 2019 — Haziran 2023"
+      },
+      "details": {
+        "en": "PCB design and manufacturing, CNC operation, electrical panel assembly and hardware troubleshooting.",
+        "tr": "PCB tasarımı ve üretimi, CNC operatörlüğü, elektrik pano montajı ve donanım arıza tespiti."
+      }
+    }
+  ],
+  "experiences": [
+    {
+      "organization": {
+        "en": "Manisa Celal Bayar University",
+        "tr": "Manisa Celal Bayar Üniversitesi"
+      },
+      "role": {
+        "en": "Academic Student Assistant",
+        "tr": "Akademik Asistan · Öğrenci asistan"
+      },
+      "period": {
+        "en": "October 2025 — Present",
+        "tr": "Ekim 2025 — Günümüz"
+      },
+      "highlights": [
+        {
+          "en": "Academic and administrative support for faculty members.",
+          "tr": "Akademisyenlerin akademik ve idari süreçlerine destek."
+        },
+        {
+          "en": "Department events, seminars and student–faculty communication.",
+          "tr": "Bölüm etkinlikleri, seminerler ve öğrenci-akademisyen iletişimi."
+        },
+        {
+          "en": "Peer mentoring.",
+          "tr": "Akran mentorluğu."
+        }
+      ]
+    },
+    {
+      "organization": {
+        "en": "PAGİT Student Community",
+        "tr": "PAGİT Öğrenci Topluluğu"
+      },
+      "role": {
+        "en": "Project & R&D Unit · Member",
+        "tr": "Proje ve Ar-Ge Birimi · Üye"
+      },
+      "period": {
+        "en": "October 2026 — Present",
+        "tr": "Ekim 2026 — Günümüz"
+      },
+      "highlights": [
+        {
+          "en": "Participation in interdisciplinary engineering projects and the development of R&D processes.",
+          "tr": "Disiplinlerarası mühendislik projelerine ve Ar-Ge süreçlerinin yapılandırılmasına katılım."
+        }
+      ]
+    },
+    {
+      "organization": {
+        "en": "Teknokent College, Ordu",
+        "tr": "Teknokent Koleji, Ordu"
+      },
+      "role": {
+        "en": "Electrical Technician Intern",
+        "tr": "Elektrik Teknisyeni Stajyeri"
+      },
+      "period": {
+        "en": "September 2021 — June 2023",
+        "tr": "Eylül 2021 — Haziran 2023"
+      },
+      "highlights": [
+        {
+          "en": "PCB design and physical manufacturing.",
+          "tr": "PCB tasarımı ve fiziksel üretimi."
+        },
+        {
+          "en": "CNC operation, calibration and part machining.",
+          "tr": "CNC operatörlüğü, kalibrasyon ve parça işleme."
+        },
+        {
+          "en": "Electrical panel assembly and hardware troubleshooting.",
+          "tr": "Elektrik pano montajı ve donanım arıza tespiti."
+        }
+      ]
+    },
+    {
+      "organization": {
+        "en": "Turkish Red Crescent, AFAD & GSB Youth Centers",
+        "tr": "Türk Kızılay, AFAD ve GSB Gençlik Merkezleri"
+      },
+      "role": {
+        "en": "Field Volunteer",
+        "tr": "Saha Gönüllüsü"
+      },
+      "period": {
+        "en": "Since November 2024",
+        "tr": "Kasım 2024’ten bu yana"
+      },
+      "highlights": [
+        {
+          "en": "One week of field work and public communication during the November 2024 blood donation campaign in Ankara.",
+          "tr": "Kasım 2024 Ankara kan bağışı kampanyasında bir hafta saha çalışması ve toplumsal farkındalık iletişimi."
+        },
+        {
+          "en": "Volunteering and field organization with AFAD and youth centers.",
+          "tr": "AFAD ve Gençlik Merkezleri bünyesinde gönüllülük ve saha organizasyonları."
+        }
+      ]
+    }
+  ],
+  "mobility": [
+    {
+      "id": "romania",
+      "country": {
+        "en": "Romania",
+        "tr": "Romanya"
+      },
+      "city": {
+        "en": "Romania",
+        "tr": "Romanya"
+      },
+      "title": {
+        "en": "Erasmus+ “SAFE NET” Youth Exchange",
+        "tr": "Erasmus+ “SAFE NET” Gençlik Değişimi"
+      },
+      "date": {
+        "en": "May 2026",
+        "tr": "Mayıs 2026"
+      },
+      "status": "completed",
+      "coordinates": [45.9432, 24.9668],
+      "highlights": [
+        {
+          "en": "Digital safety, media literacy and intercultural workshops with international participants.",
+          "tr": "Uluslararası katılımcılarla dijital güvenlik, medya okuryazarlığı ve kültürlerarası çalışma atölyeleri."
+        },
+        {
+          "en": "Experience of the European youth mobility and solidarity ecosystem.",
+          "tr": "Avrupa gençlik hareketliliği ve dayanışma ekosistemi deneyimi."
+        }
+      ]
+    },
+    {
+      "id": "spain",
+      "country": {
+        "en": "Spain",
+        "tr": "İspanya"
+      },
+      "city": {
+        "en": "Madrid & Barcelona",
+        "tr": "Madrid ve Barselona"
+      },
+      "title": {
+        "en": "An independent intercultural route",
+        "tr": "Bağımsız kültürlerarası gezi rotası"
+      },
+      "date": {
+        "en": "28 January — 5 February 2026",
+        "tr": "28 Ocak — 5 Şubat 2026"
+      },
+      "status": "completed",
+      "coordinates": [40.4168, -3.7038],
+      "highlights": [
+        {
+          "en": "Madrid’s Retiro Park, architecture and cultural stops, followed by Barcelona and Onefam Sants.",
+          "tr": "Madrid’de Retiro Park, mimari ve kültürel duraklar; ardından Barselona ve Onefam Sants."
+        },
+        {
+          "en": "Independent travel, adaptation and international communication practice.",
+          "tr": "Bağımsız seyahat, adaptasyon ve uluslararası iletişim pratiği."
+        }
+      ]
+    },
+    {
+      "id": "japan",
+      "country": {
+        "en": "Japan",
+        "tr": "Japonya"
+      },
+      "city": {
+        "en": "Tokyo & Osaka · Planned",
+        "tr": "Tokyo ve Osaka · Planlanan"
+      },
+      "title": {
+        "en": "Technology, robotics & culture route",
+        "tr": "Teknoloji, robotik ve kültür rotası"
+      },
+      "date": {
+        "en": "January — February 2027 · Planned",
+        "tr": "Ocak — Şubat 2027 · Planlanan"
+      },
+      "status": "planned",
+      "coordinates": [35.6762, 139.6503],
+      "highlights": [
+        {
+          "en": "A proposed observation route for robotics, high-speed transport, aviation technology and traditional architecture.",
+          "tr": "Robotik, yüksek hızlı ulaşım, havacılık teknolojileri ve geleneksel mimari için planlanan gözlem rotası."
+        },
+        {
+          "en": "This trip is a future plan; it has not taken place.",
+          "tr": "Bu seyahat bir gelecek planıdır; henüz gerçekleşmedi."
+        }
+      ]
+    }
+  ],
+  "lab": {
+    "fabrication": [
+      {
+        "id": "shoulder",
+        "title": {
+          "en": "CT-to-3D anatomical shoulder",
+          "tr": "BT verisinden 3B anatomik omuz"
+        },
+        "description": {
+          "en": "A medical education model showing bone, muscle and ligament structures in separate layers.",
+          "tr": "Kemik, kas ve bağ yapılarını ayrı katmanlarda gösteren medikal eğitim modeli."
+        },
+        "tools": ["CT segmentation", "SolidWorks", "3D printing"],
+        "material": {
+          "en": "Material and slicer settings have not been supplied.",
+          "tr": "Malzeme ve dilimleyici ayarları henüz paylaşılmadı."
+        }
+      },
+      {
+        "id": "arm",
+        "title": {
+          "en": "Biomimetic arm mechanism",
+          "tr": "Biyotasarım robot kol mekanizması"
+        },
+        "description": {
+          "en": "Bio-inspired finger and wrist joints, explored through tendon-driven mechanisms and servo actuation.",
+          "tr": "Tendon sürüşlü mekanizmalar ve servo aktüatörlerle keşfedilen biyo-ilhamlı parmak ve bilek eklemleri."
+        },
+        "tools": ["SolidWorks", "PLA / PETG", "Servo actuators"],
+        "material": {
+          "en": "PLA / PETG are listed in the project brief; print settings have not been supplied.",
+          "tr": "Proje brief’inde PLA / PETG belirtiliyor; baskı ayarları henüz paylaşılmadı."
+        }
+      }
+    ],
+    "ai": [
+      {
+        "id": "cinematic",
+        "title": {
+          "en": "Cinematic AI reels & short films",
+          "tr": "Sinematik AI Reels ve kısa filmler"
+        },
+        "description": {
+          "en": "Short-form cinematic sequences and visual storytelling with generative video tools.",
+          "tr": "Üretken video araçlarıyla kısa formatlı sinematik sekanslar ve görsel hikâye anlatımı."
+        },
+        "tools": ["Kling AI", "Runway", "Google Veo", "Higgsfield", "CapCut"],
+        "pipeline": {
+          "en": "Concept → prompt exploration → generated sequences → edit. Actual clips and project prompts have not been supplied.",
+          "tr": "Fikir → prompt denemeleri → üretilen sekanslar → kurgu. Gerçek klipler ve proje prompt’ları henüz paylaşılmadı."
+        }
+      },
+      {
+        "id": "automation",
+        "title": {
+          "en": "Content & engineering workflows",
+          "tr": "İçerik ve mühendislik iş akışları"
+        },
+        "description": {
+          "en": "n8n workflows for data processing, notifications and content automation.",
+          "tr": "Veri işleme, bildirim ve içerik otomasyonu için n8n iş akışları."
+        },
+        "tools": ["n8n", "Claude", "GitHub Actions"],
+        "pipeline": {
+          "en": "Input → processing → notification or publishing step. Workflow exports have not been supplied.",
+          "tr": "Girdi → işleme → bildirim veya yayın adımı. İş akışı dışa aktarımları henüz paylaşılmadı."
+        }
+      }
+    ]
+  },
+  "uses": [
+    {
+      "id": "computing",
+      "category": {
+        "en": "Computer & mobile",
+        "tr": "Bilgisayar ve mobil"
+      },
+      "description": {
+        "en": "The everyday development setup.",
+        "tr": "Günlük geliştirme düzeni."
+      },
+      "items": [
+        {
+          "en": "MacBook Air — software development, Rust package maintenance, Git and 3D model preparation.",
+          "tr": "MacBook Air — yazılım geliştirme, Rust paket bakımı, Git ve 3B model hazırlığı."
+        },
+        {
+          "en": "iPhone and MagSafe portable power ecosystem.",
+          "tr": "iPhone ve MagSafe taşınabilir güç ekosistemi."
+        }
+      ]
+    },
+    {
+      "id": "embedded",
+      "category": {
+        "en": "Embedded systems & electronics",
+        "tr": "Gömülü sistemler ve elektronik"
+      },
+      "description": {
+        "en": "From microcontroller experiments to physical interfaces.",
+        "tr": "Mikrodenetleyici deneylerinden fiziksel arayüzlere."
+      },
+      "items": [
+        {
+          "en": "STM32 Nucleo-F401RE and Nucleo-F446RE development boards.",
+          "tr": "STM32 Nucleo-F401RE ve Nucleo-F446RE geliştirme kartları."
+        },
+        {
+          "en": "Arduino Nano and Uno; RF modules, ultrasonic/optical sensors, servo and DC motor drivers.",
+          "tr": "Arduino Nano ve Uno; RF modülleri, ultrasonik/optik sensörler, servo ve DC motor sürücüleri."
+        },
+        {
+          "en": "KiCad and Proteus for PCB design and simulation.",
+          "tr": "PCB tasarımı ve simülasyonu için KiCad ve Proteus."
+        }
+      ]
+    },
+    {
+      "id": "workshop",
+      "category": {
+        "en": "3D fabrication & workshop",
+        "tr": "3B üretim ve atölye"
+      },
+      "description": {
+        "en": "Prototypes that move off the screen.",
+        "tr": "Ekrandan fiziksel dünyaya geçen prototipler."
+      },
+      "items": [
+        {
+          "en": "3D printer for engineering prototypes and medical education models.",
+          "tr": "Mühendislik prototipleri ve medikal eğitim modelleri için 3B yazıcı."
+        },
+        {
+          "en": "Bosch Professional and DIY cordless drilling, driving and workshop equipment.",
+          "tr": "Bosch Professional ve DIY şarjlı delme, vidalama ve atölye ekipmanları."
+        },
+        {
+          "en": "Soldering and PCB testing station.",
+          "tr": "Lehimleme ve PCB test istasyonu."
+        },
+        {
+          "en": "SolidWorks, AutoCAD and Tinkercad.",
+          "tr": "SolidWorks, AutoCAD ve Tinkercad."
+        }
+      ]
+    },
+    {
+      "id": "software",
+      "category": {
+        "en": "Software & developer tools",
+        "tr": "Yazılım ve geliştirici araçları"
+      },
+      "description": {
+        "en": "A practical stack for building and sharing.",
+        "tr": "Üretmek ve paylaşmak için pratik araçlar."
+      },
+      "items": [
+        {
+          "en": "GitHub Student Developer Pack, Git and GitHub Actions.",
+          "tr": "GitHub Student Developer Pack, Git ve GitHub Actions."
+        },
+        {
+          "en": "VS Code / Cursor and STM32CubeIDE.",
+          "tr": "VS Code / Cursor ve STM32CubeIDE."
+        },
+        {
+          "en": "n8n, Claude and generative video tools.",
+          "tr": "n8n, Claude ve üretken video araçları."
+        }
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": {
+        "en": "Embedded & hardware",
+        "tr": "Gömülü sistemler ve donanım"
+      },
+      "items": [
+        "STM32 Nucleo F401RE / F446RE",
+        "STM32CubeMX",
+        "Arduino",
+        "KiCad",
+        "Proteus",
+        "PCB",
+        "CNC"
+      ]
+    },
+    {
+      "category": {
+        "en": "Software",
+        "tr": "Yazılım"
+      },
+      "items": [
+        "Rust",
+        "C / C++",
+        "Python",
+        "MATLAB",
+        "TypeScript / Next.js",
+        "Tailwind CSS",
+        "Three.js",
+        "Git / GitHub Actions"
+      ]
+    },
+    {
+      "category": {
+        "en": "3D & design",
+        "tr": "3B ve tasarım"
+      },
+      "items": ["SolidWorks", "AutoCAD", "Tinkercad", "3D printing", "CT modeling"]
+    },
+    {
+      "category": {
+        "en": "AI & automation",
+        "tr": "Yapay zeka ve otomasyon"
+      },
+      "items": [
+        "n8n",
+        "Claude",
+        "Kling AI",
+        "Runway",
+        "Google Veo",
+        "Higgsfield",
+        "CapCut",
+        "Canva",
+        "Photoshop Express"
+      ]
+    },
+    {
+      "category": {
+        "en": "Languages",
+        "tr": "Diller"
+      },
+      "items_localized": [
+        {
+          "en": "Turkish · Native",
+          "tr": "Türkçe · Ana dil"
+        },
+        {
+          "en": "English · B1/B2, independent user",
+          "tr": "İngilizce · B1/B2, bağımsız kullanıcı"
+        }
+      ]
+    }
+  ],
+  "pages": {
+    "projects": {
+      "name": {
+        "en": "Projects",
+        "tr": "Projeler"
+      },
+      "eyebrow": {
+        "en": "01 / Selected work",
+        "tr": "01 / Seçilmiş çalışmalar"
+      },
+      "title": {
+        "en": "Ideas, made tangible.",
+        "tr": "Fikirden çalışan sisteme."
+      },
+      "intro": {
+        "en": "Open-source software, embedded systems and physical prototypes. Explore the work by discipline, then look inside.",
+        "tr": "Açık kaynak yazılım, gömülü sistemler ve fiziksel prototipler. Çalışmaları alanına göre keşfet, ardından ayrıntılarına bak."
+      }
+    },
+    "lab": {
+      "name": {
+        "en": "Lab",
+        "tr": "Laboratuvar"
+      },
+      "eyebrow": {
+        "en": "02 / Digital × physical",
+        "tr": "02 / Dijital × fiziksel"
+      },
+      "title": {
+        "en": "A place to experiment.",
+        "tr": "Denemek için bir alan."
+      },
+      "intro": {
+        "en": "CAD, biomedical fabrication, generative video and automation — where engineering meets creative exploration.",
+        "tr": "CAD, biyomedikal üretim, üretken video ve otomasyon: mühendisliğin yaratıcı keşifle buluştuğu yer."
+      }
+    },
+    "mobility": {
+      "name": {
+        "en": "Mobility",
+        "tr": "Hareketlilik"
+      },
+      "eyebrow": {
+        "en": "03 / Beyond the workshop",
+        "tr": "03 / Atölyenin ötesinde"
+      },
+      "title": {
+        "en": "Different places. New perspectives.",
+        "tr": "Farklı yerler. Yeni bakışlar."
+      },
+      "intro": {
+        "en": "International exchange, independent travel and a future route through technology and culture.",
+        "tr": "Uluslararası değişim, bağımsız seyahat ve teknolojiyle kültürü buluşturan bir gelecek rotası."
+      }
+    },
+    "cv": {
+      "name": {
+        "en": "CV",
+        "tr": "Özgeçmiş"
+      },
+      "eyebrow": {
+        "en": "04 / Background & practice",
+        "tr": "04 / Eğitim ve deneyim"
+      },
+      "title": {
+        "en": "Learning by building.",
+        "tr": "Üreterek öğrenmek."
+      },
+      "intro": {
+        "en": "An electronics foundation, a mechatronics education and a growing practice across code, hardware and fabrication.",
+        "tr": "Elektronik temeli, mekatronik eğitimi ve kod, donanım, üretim arasında gelişen bir çalışma pratiği."
+      }
+    },
+    "uses": {
+      "name": {
+        "en": "Uses",
+        "tr": "Ekipmanlar"
+      },
+      "eyebrow": {
+        "en": "05 / On the workbench",
+        "tr": "05 / Çalışma masasında"
+      },
+      "title": {
+        "en": "The tools behind the work.",
+        "tr": "Üretimin arkasındaki araçlar."
+      },
+      "intro": {
+        "en": "The hardware, workshop equipment and software I use to turn questions into prototypes.",
+        "tr": "Soruları prototiplere dönüştürürken kullandığım donanım, atölye ekipmanları ve yazılım."
+      }
+    },
+    "blog": {
+      "name": {
+        "en": "Blog",
+        "tr": "Blog"
+      },
+      "eyebrow": {
+        "en": "06 / Engineering notebook",
+        "tr": "06 / Mühendislik defteri"
+      },
+      "title": {
+        "en": "Build. Understand. Write.",
+        "tr": "Üret. Anla. Yaz."
+      },
+      "intro": {
+        "en": "Technical notes on real projects, their current implementation and the questions worth exploring next.",
+        "tr": "Gerçek projeler, bugünkü uygulamaları ve sırada keşfedilmeye değer sorular üzerine teknik notlar."
+      }
+    },
+    "contact": {
+      "name": {
+        "en": "Contact",
+        "tr": "İletişim"
+      },
+      "eyebrow": {
+        "en": "07 / Start a conversation",
+        "tr": "07 / Bir sohbet başlatalım"
+      },
+      "title": {
+        "en": "Good things start with hello.",
+        "tr": "Güzel şeyler bir merhabayla başlar."
+      },
+      "intro": {
+        "en": "A project idea, a technical question or an opportunity to collaborate? Let’s talk.",
+        "tr": "Bir proje fikri, teknik soru veya birlikte çalışma fırsatı mı var? Konuşalım."
+      }
+    }
+  },
+  "ui": {
+    "all": {
+      "en": "All projects",
+      "tr": "Tüm projeler"
+    },
+    "all_notes": {
+      "en": "All notes",
+      "tr": "Tüm yazılar"
+    },
+    "search_projects": {
+      "en": "Search projects",
+      "tr": "Projelerde ara"
+    },
+    "search_project_placeholder": {
+      "en": "Search titles, tools or ideas…",
+      "tr": "Başlık, araç veya fikir ara…"
+    },
+    "filter_projects": {
+      "en": "Filter projects by discipline",
+      "tr": "Projeleri alanına göre filtrele"
+    },
+    "results": {
+      "en": "results",
+      "tr": "sonuç"
+    },
+    "empty": {
+      "en": "No matching projects. Try another word or category.",
+      "tr": "Eşleşen proje bulunamadı. Başka bir kelime veya kategori dene."
+    },
+    "details": {
+      "en": "Project details",
+      "tr": "Proje ayrıntıları"
+    },
+    "code": {
+      "en": "Source code",
+      "tr": "Kaynak kodu"
+    },
+    "article": {
+      "en": "Read the project note",
+      "tr": "Proje notunu oku"
+    },
+    "package": {
+      "en": "View on crates.io",
+      "tr": "crates.io’da incele"
+    },
+    "current_scope": {
+      "en": "Current scope",
+      "tr": "Mevcut kapsam"
+    },
+    "illustration": {
+      "en": "Concept illustration",
+      "tr": "Kavramsal çizim"
+    },
+    "fabrication": {
+      "en": "3D fabrication",
+      "tr": "3B üretim"
+    },
+    "ai": {
+      "en": "Generative AI studio",
+      "tr": "Üretken AI stüdyosu"
+    },
+    "lab_tabs": {
+      "en": "Explore the lab",
+      "tr": "Laboratuvarı keşfet"
+    },
+    "model_title": {
+      "en": "A study in motion.",
+      "tr": "Hareket üzerine bir çalışma."
+    },
+    "model_label": {
+      "en": "Illustrative robot arm schematic",
+      "tr": "Temsili robot kol şeması"
+    },
+    "model_note": {
+      "en": "Interactive illustration of a robot arm. Actual shoulder CT data, GLB/STL files, project photos and videos have not been supplied.",
+      "tr": "İnteraktif, temsili robot kol çizimi. Gerçek omuz BT verisi, GLB/STL dosyaları, proje fotoğrafları ve videoları henüz paylaşılmadı."
+    },
+    "drag": {
+      "en": "Drag to rotate · or use the controls below",
+      "tr": "Döndürmek için sürükle · veya aşağıdaki kontrolleri kullan"
+    },
+    "angle": {
+      "en": "Viewing angle",
+      "tr": "Bakış açısı"
+    },
+    "reset": {
+      "en": "Reset view",
+      "tr": "Görünümü sıfırla"
+    },
+    "auto_rotate": {
+      "en": "Auto rotate",
+      "tr": "Otomatik döndür"
+    },
+    "stop_rotate": {
+      "en": "Stop rotation",
+      "tr": "Döndürmeyi durdur"
+    },
+    "supply_pending": {
+      "en": "Project media pending",
+      "tr": "Proje medyası bekleniyor"
+    },
+    "cad_models": {
+      "en": "Fabrication studies",
+      "tr": "Üretim çalışmaları"
+    },
+    "ai_studies": {
+      "en": "Creative workflows",
+      "tr": "Yaratıcı iş akışları"
+    },
+    "workflow": {
+      "en": "Workflow outline",
+      "tr": "İş akışı özeti"
+    },
+    "ai_note": {
+      "en": "Actual video files and embeds have not been supplied. These cards describe the intended work; there is no playable project footage yet.",
+      "tr": "Gerçek video dosyaları ve bağlantıları henüz paylaşılmadı. Bu kartlar çalışma alanını açıklar; henüz oynatılabilir proje videosu bulunmuyor."
+    },
+    "map_label": {
+      "en": "Schematic route map across Europe and Asia",
+      "tr": "Avrupa ve Asya üzerinde şematik rota haritası"
+    },
+    "map_note": {
+      "en": "Schematic overview · select a place to focus its story",
+      "tr": "Şematik görünüm · öyküsüne odaklanmak için bir yer seç"
+    },
+    "places": {
+      "en": "Choose a destination",
+      "tr": "Bir durak seç"
+    },
+    "completed": {
+      "en": "Completed",
+      "tr": "Tamamlandı"
+    },
+    "planned": {
+      "en": "Planned for 2027",
+      "tr": "2027 için planlandı"
+    },
+    "japan_label": {
+      "en": "Japan · planned",
+      "tr": "Japonya · planlanan"
+    },
+    "route": {
+      "en": "Routes & experiences",
+      "tr": "Rotalar ve deneyimler"
+    },
+    "mobility_note": {
+      "en": "Japan is a future plan. Additional exchange applications and preparation processes are not presented as completed travel.",
+      "tr": "Japonya bir gelecek planıdır. Diğer değişim başvuruları ve hazırlık süreçleri, tamamlanmış seyahat olarak sunulmaz."
+    },
+    "download_cv": {
+      "en": "Download existing PDF CV",
+      "tr": "Mevcut PDF CV’yi indir"
+    },
+    "print": {
+      "en": "Print this page",
+      "tr": "Bu sayfayı yazdır"
+    },
+    "cv_note": {
+      "en": "The downloadable PDF is the preserved CV file. This web page contains the expanded information from the current portfolio brief.",
+      "tr": "İndirilebilir PDF, korunan mevcut CV dosyasıdır. Bu web sayfası, güncel portfolyo brief’indeki genişletilmiş bilgileri içerir."
+    },
+    "education": {
+      "en": "Education",
+      "tr": "Eğitim"
+    },
+    "experience": {
+      "en": "Experience & community",
+      "tr": "Deneyim ve topluluk"
+    },
+    "skills": {
+      "en": "Tools & technical areas",
+      "tr": "Araçlar ve teknik alanlar"
+    },
+    "skills_note": {
+      "en": "Grouped by discipline. Proficiency scores are not assigned.",
+      "tr": "Alanlarına göre gruplandırılmıştır. Yeterlilik puanları atanmadı."
+    },
+    "profile": {
+      "en": "Profile",
+      "tr": "Profil"
+    },
+    "uses_note": {
+      "en": "Models and tools are listed as supplied. Unspecified device specifications and print settings are left open.",
+      "tr": "Model ve araçlar paylaşıldığı biçimde listelenir. Belirtilmeyen cihaz özellikleri ve baskı ayarları eklenmez."
+    },
+    "search_notes": {
+      "en": "Search the notebook",
+      "tr": "Defterde ara"
+    },
+    "filter_notes": {
+      "en": "Filter notes by topic",
+      "tr": "Yazıları konuya göre filtrele"
+    },
+    "notes_empty": {
+      "en": "No matching notes. Try another word or category.",
+      "tr": "Eşleşen yazı bulunamadı. Başka bir kelime veya kategori dene."
+    },
+    "readtime": {
+      "en": "min read",
+      "tr": "dk okuma"
+    },
+    "read_note": {
+      "en": "Read note",
+      "tr": "Yazıyı oku"
+    },
+    "blog_note": {
+      "en": "Three existing repository-based notes are preserved here. STM32, CT fabrication and travel articles can be added when their text is ready.",
+      "tr": "Mevcut üç depo kaynaklı yazı burada korunuyor. STM32, BT üretimi ve seyahat yazıları metinleri hazır olduğunda eklenebilir."
+    },
+    "email": {
+      "en": "Email",
+      "tr": "E-posta"
+    },
+    "copy_email": {
+      "en": "Copy email address",
+      "tr": "E-posta adresini kopyala"
+    },
+    "copied": {
+      "en": "Copied",
+      "tr": "Kopyalandı"
+    },
+    "public_profiles": {
+      "en": "Find me online",
+      "tr": "Çevrimiçi profiller"
+    },
+    "locations": {
+      "en": "Between university & home",
+      "tr": "Üniversite ve memleket arasında"
+    },
+    "university": {
+      "en": "University",
+      "tr": "Üniversite"
+    },
+    "hometown": {
+      "en": "Hometown",
+      "tr": "Memleket"
+    },
+    "message_title": {
+      "en": "Put your idea into words.",
+      "tr": "Fikrini söze dök."
+    },
+    "form_note": {
+      "en": "This form opens your email app with a prepared message. It does not send or store messages on this website.",
+      "tr": "Bu form, hazırlanmış bir mesajla e-posta uygulamanı açar. Bu siteden mesaj göndermez ve mesajını kaydetmez."
+    },
+    "recipient": {
+      "en": "Send to",
+      "tr": "Alıcı"
+    },
+    "your_email": {
+      "en": "Your email address",
+      "tr": "E-posta adresin"
+    },
+    "subject": {
+      "en": "Subject",
+      "tr": "Konu"
+    },
+    "message": {
+      "en": "Message",
+      "tr": "Mesaj"
+    },
+    "send": {
+      "en": "Open email draft",
+      "tr": "E-posta taslağını aç"
+    },
+    "form_fallback": {
+      "en": "You can also email either address directly.",
+      "tr": "İki adrese de doğrudan e-posta gönderebilirsin."
+    },
+    "clear_filters": {
+      "en": "Clear filters",
+      "tr": "Filtreleri temizle"
+    }
+  }
+}
